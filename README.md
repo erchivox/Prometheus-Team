@@ -22,8 +22,23 @@ El proyecto realizado no cuenta con patrocinio externo. Todo está financiado po
 
 
 ## Diseño del harware
+![primer piso](other/motor_encoder.jpg)
 
-![texto alternativo](other/Motor 25GA370 con encoder.jpg)
+| Imagen | Nombre del Componente | Descripción |
+|:------:|:----------------------|:------------|
+| ![Motor](other/motor_encoder.jpg) | **Motor 25GA370 con Encoder** | Proporciona la tracción del vehículo. El encoder permite medir la velocidad y dirección del giro para un mejor control de movimiento. |
+| ![Sensor Ultrasonico](other/ultrasonico.jpg) | **Sensor Ultrasónico HC-SR04** | Mide la distancia a obstáculos usando ondas ultrasónicas. Se usa en el frente y laterales para detectar cercanía. |
+| ![Sensor Ultrasonico](other/ultrasonico.jpg) | **Sensor Ultrasónico HC-SR04** | Mide la distancia a obstáculos usando ondas ultrasónicas. Se usa en el frente y laterales para detectar cercanía. |
+
+
+
+| ![Sensor Ultrasonico](other/ultrasonico.jpg) | **Sensor Ultrasónico HC-SR04** | Mide la distancia a obstáculos usando ondas ultrasónicas. Se usa en el frente y laterales para detectar cercanía. |
+| ![Sensor Infrarrojo](other/infrarrojo.jpg) | **Sensor Infrarrojo** | Detecta líneas o bordes. Ideal para mantenerse dentro de los límites de la pista o seguir trayectorias. |
+| ![Sensor Color](other/color_sensor.jpg) | **Sensor de Color TCS34725** | Identifica colores (rojo, verde, etc.). Permite que el vehículo tome decisiones basadas en el color de los obstáculos. |
+| ![Cámara](other/camara.jpg) | **Cámara de Visión** | Reconoce colores a distancia, permitiendo anticiparse a obstáculos o señales. Se utiliza para visión avanzada. |
+| ![Arduino](other/arduino.jpg) | **Placa Arduino UNO** | Actúa como el cerebro del vehículo, conectando y controlando todos los sensores y motores. |
+| ![Batería](other/bateria.jpg) | **Batería de Carrito Infantil** | Fuente de energía recargable que alimenta todo el sistema, brindando movilidad y autonomía. |
+
 
 
 
