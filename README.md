@@ -22,13 +22,13 @@ El proyecto realizado no cuenta con patrocinio externo. Todo está financiado po
 
 
 ## Diseño del harware
-![primer piso](other/motor_encoder.jpg)
+![control principal](other/primer_nivel.jpg)
 
 | Imagen | Nombre del Componente | Descripción |
 |:------:|:----------------------|:------------|
-| ![Motor](other/motor_encoder.jpg) | **Motor 25GA370 con Encoder** | Proporciona la tracción del vehículo. El encoder permite medir la velocidad y dirección del giro para un mejor control de movimiento. |
-| ![Sensor Ultrasonico](other/ultrasonico.jpg) | **Sensor Ultrasónico HC-SR04** | Mide la distancia a obstáculos usando ondas ultrasónicas. Se usa en el frente y laterales para detectar cercanía. |
-| ![Sensor Ultrasonico](other/ultrasonico.jpg) | **Sensor Ultrasónico HC-SR04** | Mide la distancia a obstáculos usando ondas ultrasónicas. Se usa en el frente y laterales para detectar cercanía. |
+| ![transmision](other/transmision.jpg) | **Sistema de transmision de LEGOS** | Permite distribuir la potencia del motor entre ambas ruedas traseras de manera de que el motor puede seguir girando incluso si algunas de las ruedas se traba, evitando que el motor sufra. |
+| ![Motor](other/encaje_motor.jpg) | **Motor 25GA370 con Encoder** | Proporciona la tracción del vehículo. El encoder permite medir la velocidad y dirección del giro para un mejor control de movimiento. |
+| ![Direccion](other/direccion.jpg) | **Sistema de direccion controlado por servomotor de 180º** | Permite tener un control sobre el movimiento del vehículo, moviéndo ambas ruedas delanteras con un servomotor de 180 grados, con el cual podemos tener una buena precisión al momento de esquivar obstáculos. |
 
 
 
