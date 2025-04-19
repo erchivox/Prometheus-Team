@@ -77,10 +77,22 @@ Then, we branch off the lipo battery to power the Arduino board. This voltage is
    ## Vehicle design and assembly stage
    
    Regarding the design of our vehicle, we began developing a 3D model on the Tinkercad platform to determine the dimensions of our vehicle and the sizes of each of its components. This model    was designed for a two-story vehicle, with the ground floor housing the transmission system, steering system, engine, power system, and sensors—both front, side, and diagonal—alongside. 
+| Front | Base | Side |
 |:------:|:----------------------|:------------|
-| ![modelo3dVehiculo](schemes/front_side_3d_design.png) | ![modelo3dVehiculo](schemes/side_3d_design_4.png) | ![modelo3dVehiculo](schemes/side_3d_design_3.png) |
+| ![modelo3dVehiculo](schemes/front_side_3d_design.png) | ![modelo3dVehiculo](schemes/side_3d_design_4.png) | ![modelo3dVehiculo](schemes/side_3d_design_2.png) |
 
    The second floor will house the Arduino and camera. At that time, the camera was not intended to be used with a cell phone, but the idea was being considered. This shows how a cell phone      would interact with our vehicle.
-
    
-  
+   ## Vehicle assembly
+  | Image | Description | 
+|:------:|:----------------------|
+| ![mold](other/base1.jpg) |Here are some already tested measurements for their respective car tests. We're using cardboard so we can make several changes if necessary without incurring additional costs. We'll cover the base with a double layer of cardboard so it won't be too soft and damaged by a little weight. | 
+| ![transmision](other/montaje.jpg) |We placed the Lego transmission on the base and made a few cuts to properly fit the engine, steering, and transmission. Then, we installed the servomotor in the differential and the DC motor in the transmission.  | 
+| ![instalacion de servo](other/instalacion_servo_direccion.jpg) | ![instalacion de motor dc](other/instalacion_motor_transmision.jpg)| 
+| ![primera estructura](other/primera_estructura.jpg) | Ya con todo lo elemental esamblado conectamos el motor a la alimentacion con el regulador para hacer una prueba rapida de funcionamiento, para observar si el motor y la transmision funcionan adecuadamente.| 
+
+## pruebas realizadas
+  ## prueba sensor de colores
+  [![Mira el video del proyecto](other/portada_pruebas.png)](https://youtu.be/7GS6mCXmGks)
+
+
