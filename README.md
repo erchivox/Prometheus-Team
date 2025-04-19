@@ -50,6 +50,8 @@ This project was carried out by our team; every cable, every sensor, every line 
 | Image | Component Name | Description |
 |:------:|:----------------------|:------------|
 | ![Batería](other/bateria_lipo.png) | **BLiPo battery 2200mah 7.4v** | Rechargeable power source that powers the entire system, providing mobility and autonomy. Chosen for its capacity and ability to supply sufficient power to the motors and internal components. |
+| ![regulador](other/Modulo_regulador_alimentacion_LM2596S.jpg) | **LM2596 voltage regulator** | Reduces voltage in the most efficient way. Input voltage: 4.5V to 40V DC. Output voltage: 1.23V to 37V DC. Output current: Max. 3A, 2.5A recommended. |
+
 
 ## Object detection programs
  ![openCV](other/openCV.png) 
@@ -65,3 +67,8 @@ Process Flow:
 3. Communication with Arduino: Once the color is identified, the app sends a specific code or character to the Arduino board (e.g., 'R' for red, 'G' for green).
 
 4. Decision Making: Upon receiving this information, the Arduino executes a preprogrammed action.
+
+## Power supply system
+![openCV](schemes/power%supply%diagram.jpeg) 
+In this scheme we take all the power from our 2200 mAh LiPo battery with a voltage of 7.4 volts, we interconnect that battery with a switch that will be the main one, which will indicate the ignition of the vehicle's shutoff switch and then pass a branch to the XL6009 voltage regulator with a direct output at 7.5 volts to the L298N module which is an H bridge and with rotation control, which has a voltage drop of 1.5 volts, the output of this H bridge is connected directly to our DC motor and approximately 6 volts will be reaching it, which would be its normal operating voltage.
+Then, we directly supply a branch from the lipo battery to power the Arduino board. This voltage is regulated by a DSN-Mini 360 module set to 6 volts. This output is connected directly to the Vin pin on the Arduino board, where we also connect the servomotor that controls the vehicle's steering.
