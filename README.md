@@ -23,7 +23,7 @@ El proyecto realizado no cuenta con patrocinio externo. Todo está financiado po
 
 ## Diseño del harware
 
-![alt text](wro2022-fe-template\other\Motor 25GA370 con encoder.jpg)
+![alt text](other/Motor 25GA370 con encoder.jpg)
 
 
 
