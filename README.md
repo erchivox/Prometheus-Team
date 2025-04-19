@@ -69,6 +69,18 @@ Process Flow:
 4. Decision Making: Upon receiving this information, the Arduino executes a preprogrammed action.
 
 ## Power supply system
-![openCV](schemes/power%supply%diagram.jpeg) 
+![openCV](schemes/power_supply_diagram.jpeg) 
 In this scheme we take all the power from our 2200 mAh LiPo battery with a voltage of 7.4 volts, we interconnect that battery with a switch that will be the main one, which will indicate the ignition of the vehicle's shutoff switch and then pass a branch to the XL6009 voltage regulator with a direct output at 7.5 volts to the L298N module which is an H bridge and with rotation control, which has a voltage drop of 1.5 volts, the output of this H bridge is connected directly to our DC motor and approximately 6 volts will be reaching it, which would be its normal operating voltage.
-Then, we directly supply a branch from the lipo battery to power the Arduino board. This voltage is regulated by a DSN-Mini 360 module set to 6 volts. This output is connected directly to the Vin pin on the Arduino board, where we also connect the servomotor that controls the vehicle's steering.
+Then, we branch off the lipo battery to power the Arduino board. This voltage is regulated by a DSN-Mini 360 module set to 6 volts. This output is connected directly to the Vin pin on the Arduino board, where we also connect the servomotor that controls the vehicle's steering.
+
+## Step-by-step construction
+   ## Vehicle design and assembly stage
+   
+   Regarding the design of our vehicle, we began developing a 3D model on the Tinkercad platform to determine the dimensions of our vehicle and the sizes of each of its components. This model    was designed for a two-story vehicle, with the ground floor housing the transmission system, steering system, engine, power system, and sensors—both front, side, and diagonal—alongside. 
+|:------:|:----------------------|:------------|
+| ![modelo3dVehiculo](schemes/power_supply_diagram.jpeg) | ![modelo3dVehiculo](schemes/power_supply_diagram.jpeg) | ![modelo3dVehiculo](schemes/power_supply_diagram.jpeg) |
+
+   The second floor will house the Arduino and camera. At that time, the camera was not intended to be used with a cell phone, but the idea was being considered. This shows how a cell phone      would interact with our vehicle.
+
+   
+  
