@@ -44,13 +44,24 @@ This project was carried out by our team; every cable, every sensor, every line 
 ## Information processing components
 | Image | Component Name | Description |
 |:------:|:----------------------|:------------|
-| ![Arduino](other/arduino.jpg) | **Arduino UNO board** | It acts as the brain of the vehicle, connecting and controlling all sensors and motors. |
+| ![Arduino](other/arduino.jpeg) | **Arduino UNO board** | It acts as the brain of the vehicle, connecting and controlling all sensors and motors. |
 
 ## Power components
 | Image | Component Name | Description |
 |:------:|:----------------------|:------------|
 | ![Batería](other/bateria_lipo.png) | **BLiPo battery 2200mah 7.4v** | Rechargeable power source that powers the entire system, providing mobility and autonomy. Chosen for its capacity and ability to supply sufficient power to the motors and internal components. |
 
+## Object detection programs
+ ![openCV](other/openCV.png) 
+ For obstacle detection, we designed a mobile application using Android Studio and implementing the OpenCV library, aiming to improve the robot's environmental detection capabilities. The main function of this application is to detect red and green objects in real time using the mobile device's camera. Once the application identifies the predominant color in the field of view, it sends this information to the Arduino board via a USB connection.
+ 
+![Android studio](other/andriod_studio.PNG)
 
+Process Flow:
+1. Image Capture: The app uses the phone's camera to capture real-time video.
 
+2. Processing with OpenCV: The image is filtered by color to identify whether a red or green object is present in the scene.
 
+3. Communication with Arduino: Once the color is identified, the app sends a specific code or character to the Arduino board (e.g., 'R' for red, 'G' for green).
+
+4. Decision Making: Upon receiving this information, the Arduino executes a preprogrammed action.
