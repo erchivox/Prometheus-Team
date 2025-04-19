@@ -78,7 +78,7 @@ Then, we branch off the lipo battery to power the Arduino board. This voltage is
    
    Regarding the design of our vehicle, we began developing a 3D model on the Tinkercad platform to determine the dimensions of our vehicle and the sizes of each of its components. This model    was designed for a two-story vehicle, with the ground floor housing the transmission system, steering system, engine, power system, and sensors—both front, side, and diagonal—alongside. 
 |:------:|:----------------------|:------------|
-| ![modelo3dVehiculo](schemes/power_supply_diagram.jpeg) | ![modelo3dVehiculo](schemes/power_supply_diagram.jpeg) | ![modelo3dVehiculo](schemes/power_supply_diagram.jpeg) |
+| ![modelo3dVehiculo](schemes/front_side_3d_design.png) | ![modelo3dVehiculo](schemes/side_3d_design_4.png) | ![modelo3dVehiculo](schemes/side_3d_design_3.png) |
 
    The second floor will house the Arduino and camera. At that time, the camera was not intended to be used with a cell phone, but the idea was being considered. This shows how a cell phone      would interact with our vehicle.
 
