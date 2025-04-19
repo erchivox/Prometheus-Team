@@ -14,13 +14,14 @@ This repository contains engineering materials of a self-driven vehicle's model 
 * `other` is for other files which can be used to understand how to prepare the vehicle for the competition. It may include documentation how to connect to a SBC/SBM and upload files there, datasets, hardware specifications, communication protocols descriptions etc. If there is nothing to add to this location, the directory can be removed.
 
 ## Introduction
+    Para esta competencia estamos trabajando en un diseño comodo facil de modificar y a la vez simple donde todos los elementos se relacionen entre si de manera uniforme, con nuestro primer prototipo de vehiculo autonomo con reconocimiento de objetos y colores. 
+ 
+    El diseño y contruccion de nuestro vehiculo es totalmente de nuestra autoria contando con una estructura de 2 niveles diseñada para que todos los componentes encajaran adecuadamente, vigas de soporte removibles para un desmontaje facil de ser necesario, sistema de transmisión para transmitir la potencia del motor conectado al eje hacia las dos ruedas traseras del vehículo realizado con piezas de tipo LEGO y un sistema de dirección con el mismo tipo de piezas controlado por un servomotor para una mejor precisión al momento de cruzar.
 
-_This part must be filled by participants with the technical clarifications about the code: which modules the code consists of, how they are related to the electromechanical components of the vehicle, and what is the process to build/compile/upload the code to the vehicle’s controllers._
+    El proyecto realizado no cuenta con patrocinio externo. Todo está financiado por nuestro equipo de trabajo. Cada cable, cada sensor, cada línea de código ha sido posible gracias al esfuerzo tanto técnico como económico de nuestro propio bolsillo. No solo estamos construyendo un vehículo, estamos demostrando que con pasión y ganas de aprender se pueden romper los límites.
 
-## How to prepare the repo based on the template
 
-_Remove this section before the first commit to the repository_
+## Diseño del harware
 
-1. Clone this repo by using the `git clone` functionality.
-2. Remove `.git` directory
-3. [Initialize a new public repository on GitHub](https://github.com/new) by following instructions from "create a new repository on the command line" section (appeared after pressing "Create repository" button).
+    
+
