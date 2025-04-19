@@ -25,17 +25,20 @@ This project was carried out by our team; every cable, every sensor, every line 
 ![control principal](other/primer_nivel.jpg)
 
 | Image | Component Name | Description |
+| ![base del primer piso](other/base.jpg) | **Vehicle base** | Through trial and error, we adjusted the dimensions of our base for better space distribution and vehicle mobility. |
 |:------:|:----------------------|:------------|
 | ![transmision](other/transmision.jpg) | **LEGOS transmission system** | It allows the engine's power to be distributed between both rear wheels so that the engine can continue turning even if some of the wheels lock up, preventing the engine from suffering any damage. |
 | ![Motor](other/encaje_motor.jpg) | **25GA370 Motor with Encoder** |It provides the vehicle's traction. The encoder measures the speed and direction of rotation for better motion control. |
 | ![Direccion](other/direccion.jpg) | **180° servo-controlled steering system** | It allows control over the vehicle's movement, moving both front wheels with a 180-degree servomotor, which allows us to achieve good precision when avoiding obstacles. |
+| ![separedores](other/separadores.jpg) | **Acrylic separators** | For a comfortable and easy-to-modify assembly, these spacers were used, where you only have to twist the pillars to unscrew them and disassemble the vehicle. |
 
+## Components for detection
+| ![Sensor Ultrasonico](other/sensor_ultrasonico.jpg) | **Ultrasonic Sensor HC-SR04** | Measures the distance to obstacles using ultrasonic waves. It is used front and side to detect proximity. |
+| ![Sensor Infrarrojo](other/sensor_infrarrojo.jpg) | **Sharp GP2Y0A21YK0F Infrared Sensor** | Ensures fast and accurate object detection. They are located on the vehicle's front diagonals. |
+| ![Sensor Color](other/color_sensor.jpg) | **TCS34725 Color Sensor** |It allows for precise color detection at a short distance, so it is positioned on the underside of the vehicle, identifying the colors of the track stripes. It has a high sensitivity and a wide dynamic range of 3,800,000:1, and can operate even behind dark glass. |
+| ![Cámara](other/celular.jpg) | **Cell phone camera** | Using a program using OpenCV and Android Studio, we will use the cell phone camera to identify the color of obstacles at a great distance. |
+| ![Cámara](other/celular.jpg) | **Cell phone camera** | Using a program using OpenCV and Android Studio, we will use the cell phone camera to identify the color of obstacles at a great distance. |
 
-
-| ![Sensor Ultrasonico](other/ultrasonico.jpg) | **Sensor Ultrasónico HC-SR04** | Mide la distancia a obstáculos usando ondas ultrasónicas. Se usa en el frente y laterales para detectar cercanía. |
-| ![Sensor Infrarrojo](other/infrarrojo.jpg) | **Sensor Infrarrojo** | Detecta líneas o bordes. Ideal para mantenerse dentro de los límites de la pista o seguir trayectorias. |
-| ![Sensor Color](other/color_sensor.jpg) | **Sensor de Color TCS34725** | Identifica colores (rojo, verde, etc.). Permite que el vehículo tome decisiones basadas en el color de los obstáculos. |
-| ![Cámara](other/camara.jpg) | **Cámara de Visión** | Reconoce colores a distancia, permitiendo anticiparse a obstáculos o señales. Se utiliza para visión avanzada. |
 | ![Arduino](other/arduino.jpg) | **Placa Arduino UNO** | Actúa como el cerebro del vehículo, conectando y controlando todos los sensores y motores. |
 | ![Batería](other/bateria.jpg) | **Batería de Carrito Infantil** | Fuente de energía recargable que alimenta todo el sistema, brindando movilidad y autonomía. |
 
