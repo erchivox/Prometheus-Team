@@ -1,7 +1,7 @@
-Engineering materials
+Prometheus Team
 ====
 
-This repository contains engineering materials of a self-driven vehicle's model participating in the WRO Future Engineers competition in the season 2022.
+Equipo venezolano que esta representando a la Universidad Politecnica Territorial Jose Felix Ribas(UPTJFR).
 
 ## Content
 
@@ -23,5 +23,7 @@ This repository contains engineering materials of a self-driven vehicle's model 
 
 ## Diseño del harware
 
-    
+    ![alt text](wro2022-fe-template\other\Motor 25GA370 con encoder.jpg)
+
+
 
