@@ -89,10 +89,11 @@ Then, we branch off the lipo battery to power the Arduino board. This voltage is
 | ![mold](other/base1.jpg) |Here are some already tested measurements for their respective car tests. We're using cardboard so we can make several changes if necessary without incurring additional costs. We'll cover the base with a double layer of cardboard so it won't be too soft and damaged by a little weight. | 
 | ![transmision](other/montaje.jpg) |We placed the Lego transmission on the base and made a few cuts to properly fit the engine, steering, and transmission. Then, we installed the servomotor in the differential and the DC motor in the transmission.  | 
 | ![instalacion de servo](other/instalacion_servo_direccion.jpg) | ![instalacion de motor dc](other/instalacion_motor_transmision.jpg)| 
-| ![primera estructura](other/primera_estructura.jpg) | Ya con todo lo elemental esamblado conectamos el motor a la alimentacion con el regulador para hacer una prueba rapida de funcionamiento, para observar si el motor y la transmision funcionan adecuadamente.| 
+| ![primera estructura](other/primera_estructura.jpg) |** Ya con todo lo elemental esamblado conectamos el motor a la alimentacion con el regulador para hacer una prueba rapida de funcionamiento, para observar si el motor y la transmision funcionan adecuadamente.**| 
 
-## pruebas realizadas
-  ## prueba sensor de colores
+## Tests performed
+  ## color sensor test
+  Click on the image to watch the video
   [![Mira el video del proyecto](other/portada_pruebas.png)](https://youtu.be/7GS6mCXmGks)
 
 
