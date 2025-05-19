@@ -74,6 +74,11 @@ Flujo del proceso:
 En este esquema, tomamos toda la energía de nuestra batería LiPo de 2200 mAh con un voltaje de 7.4 voltios. La interconectamos con un interruptor principal que indica el encendido del vehículo. Luego, pasamos una rama al regulador de voltaje XL6009 con una salida directa de 7.5 voltios al módulo L298N, un puente H con control de rotación, que tiene una caída de voltaje de 1.5 voltios. La salida de este puente H está conectada directamente a nuestro motor de CC y le llegarán aproximadamente 6 voltios, que sería su voltaje de funcionamiento normal.
 Luego, derivamos la batería LiPo para alimentar la placa Arduino. Este voltaje se regula mediante un módulo DSN-Mini 360 configurado a 6 voltios. Esta salida se conecta directamente al pin Vin de la placa Arduino, donde también conectamos el servomotor que controla la dirección del vehículo.
 
+## Sistema de deteccion de objetos.
+
+![diagrama sensores](schemes/diagrama-sensores.jpg) 
+Cada uno de estos sensores tiene funciones específicas. Con las cuales guiaremos nuestro vehículo e garantizaremos que no impacte contra cualquier obstáculo. Los sensores infrarrojos estarán ubicados en las diagonales del vehículo con una detección rápida y segura para evitar colecciones colisiones sorpresas, los sensores ultrasonicos están ubicados al frente y en los laterales del vehículo midiendo a largas distancias e ir manteniendo nuestros márgenes en movimiento en función de las paredes laterales y la del frente. El sensor giroscopio nos ayudará a guiarnos según nuestro grados iniciales para avanzar de una manera recta a través de la pista y poder hacer los giros de manera correcta. Y finalmente nuestro sensor de color que nos identificará las líneas que están en el mapa para así recorrer la pista de una manera eficiente.
+
 ## Paso a paso de la construcción.
    ## Vehicle design and assembly stage
    
