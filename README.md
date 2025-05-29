@@ -97,7 +97,21 @@ Cada uno de estos sensores tiene funciones específicas. Con las cuales guiaremo
 | ![instalacion de servo](other/instalacion_servo_direccion.jpg) | ![instalacion de motor dc](other/instalacion_motor_transmision.jpg)| 
 | ![primera estructura](other/primera_estructura.jpg) |** Ya con todo lo elemental esamblado conectamos el motor a la alimentación con el regulador para hacer una prueba rápida de funcionamiento, para observar si el motor y la transmisión funcionan adecuadamente.**| 
 
+Cambio de base
+  | Imagen | Descripción |
+|:------:|:----------------------|
+| ![segunda base impresion 3d](other/1.jpg) |**  Realizamos un cambio del material de la base ya que el carton es fue el material de prueba para modificarlo de todas las maneras posibles, pero ya con el molde de nuestro vehiculo terminado procedemos a mandar a imprimir en 3d nuestro molde **| 
+| ![montaje de la nueva](other/proceso.jpg) |**  Comiendo del cambio de base montando la transmision y diferencial del vehiculo **| 
+| ![montaje de la nueva](other/proceso-2.jpg) | ![montaje de la nueva](other/proceso-3.jpg) | 
+| ![montaje de la nueva](other/proceso-4.jpg) | ** ** | 
+
 ## Pruebas realizadas
+  Para hacer las pruebas realizamos una imitacion de la pista para practicar. Construida con laminas recicladas pegadas unas a otras para cumplir con los estandares de la competencia los cuales son que la pista debe tener unas medidas de 3*3metros. Son 8 cuadrados de 100cm. Pero para nuestra pista tenemos un error de mas o menos 10cm. Una pista que en las esquinas debe de tener 2 lineas una azul y otra naranja separadas por 30 grados cada una tomando el mismo origen que es la esquina del cuadrado de adentro.
+
+  ![montaje de la nueva](other/pista.jpg)
+  
+
+  
  ## Prueba del sensor de color
   Haga clic en la imagen para ver el vídeo
   [![Mira el video del proyecto](other/portada_pruebas.png)](https://youtu.be/7GS6mCXmGks)
