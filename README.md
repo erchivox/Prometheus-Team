@@ -20,7 +20,7 @@ El diseño y la construcción de nuestro vehículo son íntegramente propios, co
 
 Este proyecto fue llevado a cabo por nuestro equipo; cada cable, cada sensor, cada línea de código fue posible gracias a su esfuerzo técnico y financiero. No solo construimos un vehículo; demostramos que con pasión y ganas de aprender, se pueden superar los límites.
 
-
+  
 ## Diseño de harware.
 ![control principal](other/primer_nivel.jpg)
 
