@@ -24,12 +24,13 @@ Este proyecto fue llevado a cabo por nuestro equipo; cada cable, cada sensor, ca
 ## Diseño de harware.
 ![control principal](other/primer_nivel.jpg)
 
+Para esta primera fase de nuestra primera montura 
 | Imagen | Nombre de componente | Descripcion |
 |:------:|:----------------------|:------------|
-| ![base del primer piso](other/base.jpg) | **Base del Vehiculo** | A través de prueba y error, ajustamos las dimensiones de nuestra base para una mejor distribución del espacio y movilidad del vehículo.. |
-| ![transmision](other/transmision.jpg) | **Sistema de transmision de Legos** | Permite distribuir la potencia del motor entre ambas ruedas traseras para que el motor pueda seguir girando aunque alguna de las ruedas se bloquee, evitando que el motor sufra algún daño. |
-| ![Motor](other/encaje_motor.jpg) | **25GA370 Motor dc con encoder** | Proporciona la tracción del vehículo. El codificador mide la velocidad y la dirección de rotación para un mejor control del movimiento. |
-| ![Direccion](other/direccion.jpg) | **servomor de 180grados** | Permite controlar el movimiento del vehículo, moviendo ambas ruedas delanteras con un servomotor de 180 grados, lo que nos permite conseguir una buena precisión a la hora de esquivar obstáculos. |
+| ![base del primer piso](other/base.jpg) | **Base del Vehiculo** | La base de este vehículo con unas medidas de 11,5 y 2,5 cm está pensada en imitar un auto de carreras de Fórmula 1, con eso en mente ajustamos las dimensiones de nuestra base para una mejor distribución del espacio y movilidad del vehículo dando espacio suficiente tanto al sistema de dirección del vehículo como al de transmisión y de los componentes y módulos electrónicos seleccionados para el vehículo. Parte delantera: esta se realizó de manera que se pudieran colocar los 3 sensores que teníamos pensado colocar para que el vehículo confirme que tiene objetos al frente del él (1 ultrasónico frontal y 2 infrarrojos en las diagonales). Su parte más débil es donde se coloca la dirección, ya que necesita el espacio suficiente para mover correctamente el ángulo de sus ruedas delanteras al momento de ejecutar el cruce, pero esto ya depende del tipo de material, ya que como se empezó con cartón si nos dio algunos problemas, pero si trabajas directamente con una lámina de acrílico o un material más rígido sería lo mejor. |
+| ![transmision](other/transmision.jpg) | **Sistema de transmision de Legos** | Permite distribuir la potencia del motor entre ambas ruedas traseras para que el motor pueda seguir girando aunque alguna de las ruedas se bloquee, evitando que el motor sufra algún daño. Escogimos este sistema por su facilidad de uso y su tamaño adecuado a lo que teniamos pensando para nuestro vehiculo, permitiendo tambien la reversa de ser necesario. |
+| ![Motor](other/encaje_motor.jpg) | **25GA370 Motor dc con encoder** | Este es el tipo de motor normalmente usado para estos vehiculos, por su potencia y velocidad de giros por segundo. El codificador integrado mide la velocidad y la dirección de rotación para un mejor control del movimiento pero hasta ahora no a sido utilizado. Especificaciones:( Potencia nominal: 4 W, Tensión nominal: 6V, Velocidad nominal: 220 RPM, Peso: 400g, caja reductora: 21.3:1, torque nominal: 0.35 kg·cm) |
+| ![Direccion](other/direccion.jpg) | **Sistema de direccion** | Este sistema contruido mediante piezas legos fue escogido por su tamaño adecuado y su capicidad sencilla de adaptarle un servomotor de 180 grados para controlar el movimiento del vehiculo, Sacandole su maximo giro con el servomotor en 180 y 0 grados. El servo esta mirando hacia el vehiculo por lo que seria sus 90 grados para centrarse, 180 para girar a la izquierda y 0 grados para girar a la derecha.|
 | ![separedores](other/separadores.jpg) | **Separadores de acrilico** | Para un montaje cómodo y fácil de modificar, se utilizaron estos espaciadores, donde solo hay que girar los pilares para desatornillarlos y desmontar el vehículo. |
 
 ## Componentes de decteccion.
@@ -67,12 +68,78 @@ Flujo del proceso:
 3. Comunicación con Arduino: Una vez identificado el color, la aplicación envía un código o carácter específico a la placa Arduino (p. ej., «R» para rojo, «G» para verde).
 
 4. Toma de decisiones: Al recibir esta información, Arduino ejecuta una acción preprogramada.
-   
+
+
+## Cálculo de Torque y Velocidad.
+
+  #### Calculo de torque necesario para mover el vehiculo:
+  Tnecesario = m.g⋅r=0.943⋅9.81⋅0.04= 0.370N\cdotpm
+  m= masa
+  g= gravedad
+  r= radio de las ruedas.
+
+#### Calculo de torque a la salida (después de la reducción) segun el motor dc 25GA370:
+```
+ 𝑇salida = 𝑇motor⋅Reduccion =0.0343 . 21.3= 0.7306 N\cdotpm 
+```
+ 
+#### Calculo de la velocidad lineal del vehiculo:
+
+  Convertimos a radianes por segundo:
+ ```
+    ω = (220 . 2π)/60=23,04𝑟𝑎𝑑/𝑠
+  ```
+  Velocidad lineal del vehículo:
+  
+  ```
+   v=ω⋅r=23.04⋅0.04 ≈ 0.92m/s
+  ```
+
+
+
+  El motor empleado tiene una velocidad sin carga de 4690 RPM y un torque nominal de 0.35 kg·cm (0.0343 N·m). Mediante una caja reductora de 21.3:1, la velocidad       se reduce a 220.2 RPM en el eje de salida, resultando en una velocidad lineal del vehículo de aproximadamente 0.92 m/s.
+
+  Gracias a esta reducción, el torque en las ruedas alcanza 0.7306 N·m, lo cual supera el torque mínimo necesario para mover el vehículo de 943 gramos (0.370 N·m).     Por tanto, el sistema cumple adecuadamente los requerimientos de tracción y movilidad para condiciones normales.
+
+
 ## Sistema de alimentacion.
 
 ![openCV](schemes/power_supply_diagram.jpeg) 
 En este esquema, tomamos toda la energía de nuestra batería LiPo de 2200 mAh con un voltaje de 7.4 voltios. La interconectamos con un interruptor principal que indica el encendido del vehículo. Luego, pasamos una rama al regulador de voltaje XL6009 con una salida directa de 7.5 voltios al módulo L298N, un puente H con control de rotación, que tiene una caída de voltaje de 1.5 voltios. La salida de este puente H está conectada directamente a nuestro motor de CC y le llegarán aproximadamente 6 voltios, que sería su voltaje de funcionamiento normal.
 Luego, derivamos la batería LiPo para alimentar la placa Arduino. Este voltaje se regula mediante un módulo DSN-Mini 360 configurado a 6 voltios. Esta salida se conecta directamente al pin Vin de la placa Arduino, donde también conectamos el servomotor que controla la dirección del vehículo.
+
+###  Cálculo del Consumo Energético Total
+
+| Componente                   | Cantidad | Consumo estimado (mA) | Total (mA) |
+|-----------------------------|----------|------------------------|------------|
+| Motor DC                      | 1        | 500 mA (en carga)      | 500 mA     |
+| Servo 180°                  | 1        | 150 mA (típico)        | 150 mA     |
+| Sensor ultrasónico HC-SR04 | 3        | 15 mA c/u              | 45 mA      |
+| Sensor infrarrojo Sharp     | 2        | 30 mA c/u              | 60 mA      |
+| Sensor TCS34725 (color)     | 1        | 3 mA                   | 3 mA       |
+| Arduino Uno                 | 2        | 50 mA c/u (sin carga)    | 100 mA      |
+| **TOTAL**                   | —        | —                      | **858 mA** |
+
+---
+
+### 🔋 Corriente total aproximada: **~858 mA**
+
+---
+
+### ⏱️ Autonomía estimada
+
+**Fórmula:**
+```
+Autonomía (h) = Capacidad de la batería (mAh) / Consumo total (mA)
+```
+
+**Ejemplo con batería de 2200 mAh:**
+```
+Autonomía ≈ 2200 mAh / 810 mA ≈ 2.56 horas
+```
+
+> ⚠️ *Nota:* Este valor es teorico y si el consumo se mantiene igual sin irregularidades, pero eso nunca pasa el motor puede llegar a consumir mas si te traba en un obstaculo asi que es apoximado.
+
 
 ## Sistema de deteccion de objetos.
 
