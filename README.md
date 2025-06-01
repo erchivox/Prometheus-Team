@@ -50,6 +50,18 @@ El diseño y la construcción de nuestro vehículo son íntegramente propios. Su
 Este proyecto ha sido el resultado del esfuerzo y la dedicación de todo nuestro equipo. Cada cable, cada sensor, y cada línea de código es un testimonio de nuestro **esfuerzo técnico y financiero**. No solo construimos un vehículo; demostramos que con pasión y ganas de aprender, se pueden superar los límites.
 
 ---
+##  Fotos de equipo
+| ![Base del Primer Piso](other/base.jpg)  |  ![Base del Primer Piso](other/base.jpg)  | 
+| :----: | :---------- |
+---
+
+---
+##  Fotos del vehiculo 
+| ![Base del Primer Piso](other/base.jpg)  |  ![Base del Primer Piso](other/base.jpg)  |  ![Base del Primer Piso](other/base.jpg) |
+| :----: | :------------------- | :---------- |
+| ![Base del Primer Piso](other/base.jpg)  |  ![Base del Primer Piso](other/base.jpg)  |  ![Base del Primer Piso](other/base.jpg) |
+
+---
 
 ##  Diseño de Hardware
 
@@ -89,12 +101,12 @@ Este proyecto ha sido el resultado del esfuerzo y la dedicación de todo nuestro
 ---
 
 ##  Programas para Detección de Objetos
+| ![OpenCV Logo](other/openCV.png) | ![Android Studio Logo](other/andriod_studio.PNG) |
+| :-------------------------------: | :---------------------------------------------: |
 
-![OpenCV Logo](other/openCV.png)
 
 Para la detección de obstáculos, hemos desarrollado una **aplicación móvil con Android Studio** que implementa la biblioteca **OpenCV**. Esta aplicación mejora la capacidad de detección del entorno del robot, identificando objetos rojos y verdes en tiempo real mediante la cámara del dispositivo móvil. Una vez que la aplicación identifica el color predominante, envía esta información a la placa Arduino a través de una conexión USB.
 
-![Android Studio Logo](other/andriod_studio.PNG)
 
 ### Flujo del Proceso:
 
@@ -235,3 +247,15 @@ Para las pruebas, creamos una imitación de la pista de competición utilizando 
 Haz clic en la imagen para ver el vídeo:
 
 [![Mira el video del proyecto](other/portada_pruebas.png)](https://youtu.be/7GS6mCXmGks)
+
+### Prueba de vuelta a la pista
+
+Haz clic en la imagen para ver el vídeo:
+
+[![Mira el video del proyecto](other/prueba-vuelta.png)]( )
+
+### Prueba de evacion de obstaculos
+
+Haz clic en la imagen para ver el vídeo:
+
+[![Mira el video del proyecto](other/prueba-evacion-obstaculos.png)]( )
