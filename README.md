@@ -57,9 +57,9 @@ Este proyecto ha sido el resultado del esfuerzo y la dedicación de todo nuestro
 
 ---
 ##  Fotos del vehiculo 
-| ![Base del Primer Piso](other/base.jpg)  |  ![Base del Primer Piso](other/base.jpg)  |  ![Base del Primer Piso](other/base.jpg) |
+| ![Arriba del vehiculo](v-photos/arriba.jpg)  |  ![Debajo de vehiculo](v-photos/abajo.jpg)  |  ![Lateral derecho](v-photos/lateral_derecho.jpg) |
 | :----: | :------------------- | :---------- |
-| ![Base del Primer Piso](other/base.jpg)  |  ![Base del Primer Piso](other/base.jpg)  |  ![Base del Primer Piso](other/base.jpg) |
+| ![lateral izquierdo](v-photos/lateral_izquierdo.jpg)  |  ![frente](v-photos/frente.jpg)  |  ![detras](v-photos/detras.jpg) |
 
 ---
 
