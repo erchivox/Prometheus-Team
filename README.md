@@ -107,7 +107,6 @@ Este proyecto ha sido el resultado del esfuerzo y la dedicación de todo nuestro
 
 Para la detección de obstáculos, hemos desarrollado una **aplicación móvil con Android Studio** que implementa la biblioteca **OpenCV**. Esta aplicación mejora la capacidad de detección del entorno del robot, identificando objetos rojos y verdes en tiempo real mediante la cámara del dispositivo móvil. Una vez que la aplicación identifica el color predominante, envía esta información a la placa Arduino a través de una conexión USB.
 
-
 ### Flujo del Proceso:
 
 1.  **Captura de Imagen:** La aplicación utiliza la cámara del teléfono para capturar vídeo en tiempo real.
@@ -115,6 +114,9 @@ Para la detección de obstáculos, hemos desarrollado una **aplicación móvil c
 3.  **Comunicación con Arduino:** Una vez identificado el color, la aplicación envía un código o carácter específico a la placa Arduino (ej., "R" para rojo, "G" para verde).
 4.  **Toma de Decisiones:** Al recibir esta información, Arduino ejecuta una acción preprogramada.
 
+| ![OpenCV Logo](other/app_prueba.jpg) | ![Android Studio Logo](other/app_prueba2.jpg) |
+| :-------------------------------: | :---------------------------------------------: |
+| ![OpenCV Logo](other/app_prueba3.jpg) | ![Android Studio Logo](other/pruebas.jpg) |
 ---
 
 ##  Cálculo de Torque y Velocidad
@@ -224,6 +226,19 @@ El diseño de nuestro vehículo comenzó con un **modelo 3D en Tinkercad** para 
 | ![Instalación de Transmisión](other/montaje.jpg) | Colocamos la transmisión LEGO en la base y realizamos los cortes necesarios para que el motor, la dirección y la transmisión encajaran correctamente. Luego, instalamos el servomotor en el diferencial y el motor DC en la transmisión. |
 | ![Instalación de Servo](other/instalacion_servo_direccion.jpg) | ![Instalación de Motor DC](other/instalacion_motor_transmision.jpg) |
 | ![Primera Estructura](other/primera_estructura.jpg) | Con todos los elementos esenciales ensamblados, conectamos el motor a la alimentación con el regulador para una prueba de funcionamiento rápida, verificando el correcto desempeño del motor y la transmisión. |
+
+### Diseño de base 3d
+Teniendo en cuenta el modelo diseñado en carton empezamos con la modelacion en 3d de nuestro vehiculo para construirlo con un material mas resistente que no sufra los defectos de nuestra primera base de carton.
+
+| ![diseño de base](other/base3d.png) | ![diseño de la base](other/base3d2.png) |
+| :----: | :---------- |
+| ![Montaje de la Nueva Base 2](other/base_servo.png) | ![Montaje de la Nueva Base 2](other/base_servo2.png) |
+|![Montaje de la Nueva Base 2](other/base3d3.png)|![Montaje de la Nueva Base 2](other/base3d4.png)  |
+| ![Montaje de la Nueva Base 4](other/protectorUltrasonico3d.jpeg) | ![Montaje de la Nueva Base 3](other/foto_impresion1.jpg) |
+| ![Montaje de la Nueva Base 4](other/aleron3d.jpeg) | Diseñamos una base para servo para que se ajuste de manera acorde a la base y se mantenga firme al momento de mover la transmision,  un protector para los sensores ultrasonicos y el aleron trasero para seguir con la idea de asemejarnos a un vehiculo de formula uno. Todos estos modelos estaran en la carpeta de models. |
+
+
+---
 
 ### Cambio de Base
 
