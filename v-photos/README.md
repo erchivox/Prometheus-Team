@@ -3,39 +3,35 @@ Vehicle's photos
 
 This directory must contain 6 photos of the vehicle (from every side, from top and bottom)
 
-# Mi Proyecto de Carro
-
-¡Aquí les muestro las fotos de mi carro desde diferentes ángulos!
-
 ---
 
 ### Vista Frontal
-![Carro - Vista Frontal](v-photos/frente.jpg)
+![Carro - Vista Frontal](frente.jpg)
 
 ---
 
 ### Vista Trasera
-![Carro - Vista Trasera](v-photos/detras.jpg)
+![Carro - Vista Trasera](detras.jpg)
 
 ---
 
 ### Lateral Izquierdo
-![Carro - Lateral Izquierdo](v-photos/lateral_izquierdo.jpg)
+![Carro - Lateral Izquierdo](lateral_izquierdo.jpg)
 
 ---
 
 ### Lateral Derecho
-![Carro - Lateral Derecho](v-photos/lateral_derecho.jpg)
+![Carro - Lateral Derecho](lateral_derecho.jpg)
 
 ---
 
 ### Vista Superior
-![Carro - Vista Superior](v-photos/arriba.jpg)
+![Carro - Vista Superior](arriba.jpg)
 
 ---
 
 ### Vista Inferior
-![Carro - Vista Inferior](v-photos/abajo.jpg)
+![Carro - Vista Inferior](abajo.jpg)
 
 ---
 
