@@ -316,11 +316,18 @@ Aquí dejo el paso a paso de la realización de la app:
 ### Diagrama de logica de evasion de objetos
  ![Diagrama del codigo de evasion de objetos](other/diagrama_esquive.png)
  
-## Prueba de vuelta a la pista
+## Video resumen de las pruebas de vuelta a la pista y esquive de objetos.
 
 Haz clic en la imagen para ver el vídeo:
 
-[![Mira el video del proyecto](other/prueba-vuelta.png)]( )
+[![Mira el video del proyecto](other/video_promocional.png)](https://youtu.be/E-xsGcDSaJY?si=9i87w-iJ8TijE_ca)
+
+
+## Prueba de vueltas a la pista
+
+Haz clic en la imagen para ver el vídeo:
+
+[![Mira el video del proyecto](other/prueba-vuelta.png)](https://youtu.be/E-xsGcDSaJY?si=9i87w-iJ8TijE_ca)
 
 ## Prueba de evacion de obstaculos
 
