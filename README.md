@@ -249,6 +249,14 @@ Teniendo en cuenta el modelo diseñado en carton empezamos con la modelacion en 
 | ![Montaje de la Nueva Base 2](other/proceso-2.jpg) | ![Montaje de la Nueva Base 3](other/proceso-3.jpg) |
 | ![Montaje de la Nueva Base 4](other/proceso-4.jpg) | Se continúa con el ensamblaje de la nueva base. |
 
+## Problemas encontrados. 
+
+# interferencia con el puente H, solución: Un sistema maestro y esclavo.
+
+Al momento de realizar las pruebas de vueltas a la pista nos percatamos que el vehículo no respondía correctamente y al momento de realizar a el giro nunca terminaba de realizarlo o simplemente no detectaba la línea y por esto no lo realizaba. Entre mucha investigación encontramos que la falla era una interferencia con los pines que mandaban las señales al modulo de puente H. Por lo que buscamos aislar estos cables resultando sin éxitos. 
+La solución probada fue conectado un segundo microcontrolador Arduino esclavo, encargado exclusivamente de enviar los comandos de avanzar, retroceder, detenerse y algún cambio de velocidad al módulo puente H, mientras que el Arduino principal en este caso el maestro, llevara todos los sensores y cables conectados al esclavo para indicarle que acción debe ejecutar el puente H. 
+De esta manera logramos distanciar esta interferencia y el código fluía continuamente sin problemas
+
 ---
 
 ## Pruebas Realizadas
@@ -284,9 +292,23 @@ Para culminar con este código realzamos la lógica necesaria para cumplir con l
 
 ### Desarrollo de la logica de evasion de objetos.
 
+   Para la lógica de evasión de objetos tomamos los ejemplos de otro proyecto donde se utilizan las cámaras para procesar las imágenes y mediante programas como open Cv analizar la imagen en búsquedas de figuras y colores par así tener una idea del objeto que tenemos en el rango de visualización y de su ubicación. Nos tomó un tiempo desarrollar una aplicación para teléfonos móviles para usar la cámara de estos y procesar las imágenes empezando con una app simple donde mandábamos comandos al Arduino para asegurarnos que si se pudiera realizar la conexión entre estos dispositivos hasta realizar la aplicación y mandar comandos simples de R(Red) cuando se detecta un objeto rojo y G (Green) cuando se detecta un objeto verde. 
+#Problema: No saber la distancia del objeto.
+Al momento de realizar las pruebas con el Arduino nos dimos cuenta que también necesitábamos encontrar la manera de calcular la distancia del objeto mediante la cámara, por lo que llegaos a la solución que mediante el área detectada del objeto aplicaríamos una formula para que esta me diera la distancia aproximada del objeto y saber cuando esquivar. 
+
+## Primer esquive:
+Ya con app lista desarrollamos una lógica para el microcontrolador Arduino y de esta manera recibir los comandos de color del objeto, distancia. Realizando una prueba controlada tuvimos unos errores con la iluminación que nos afectaba el reconocimiento de los colores por que tuvimos que ajustar los valores de los colores para mejorar la detección del objeto que termino siendo mejor pero todavía le faltan mejoras, pero cumplió con el objetivo de identificar el objeto y darnos su distancia aproximada, que a 30 cm el Arduino deberá realizar el giro a la derecha si es rojo(R) y a la izquierda si es verde(G), con un retorno al lado contrario luego de realizar el giro para reincorporarse al centro del carril de la pista. 
+
+   # Orientacion hacia el objeto para posterior esquive.
+Problema: El vehículo cuando no está perfectamente en dirección al objeto este ejecutara el esquive pero lo derribara o simplemente perderá de vista el objeto ya que su dirección no va hacia el, por tal razón pensamos en una lógica para que dependiendo de la posición del objeto en la cámara de la del teléfono mandara comandos como C(centro), D(derecha) y I(izquierda), de esta manera ir moviendo de forma controlada la dirección según el comando recibido apenas se capte el objeto en la visión de la cámara. Con este cambio realizado el vehículo se posiciona de manera adecuada frente al objeto a esquivar y realiza su movimiento preciso para esquivar y al retornar al centro.
+
+Problema: al momento de retornar al centro puede que haya un objeto fuera de ranga de la cámara por que al momento de esquivar si se veía pero este modo no es capaz de comenzar el seguimiento así que se le agregó que si detecta otro objeto mientras este en modo de retorno cambie a modo de seguimiento nuevamente.
+
+Aquí dejo el paso a paso de la realización de la app:
+
 ## Diagrama de logica de evasion de objetos
  ![Montaje de la Nueva Base](other/proceso.jpg)
-
+ 
 ### Prueba de vuelta a la pista
 
 Haz clic en la imagen para ver el vídeo:
