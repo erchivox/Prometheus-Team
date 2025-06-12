@@ -216,7 +216,7 @@ El diseño de nuestro vehículo comenzó con un **modelo 3D en Tinkercad** para 
 
 | Vista Frontal | Vista Base | Vista Lateral |
 | :-----------: | :--------: | :-----------: |
-| ![Modelo 3D Frontal](schemes/front_side_3d_design.png) | ![Modelo 3D Base](schemes/side_3d_design_4.png) | ![Modelo 3D Lateral](schemes/side_3d_design_2.png) |
+| ![Modelo 3D Frontal](other/Frontal3d.png) | ![Modelo 3D Base](other/base_3d.png) | ![Modelo 3D Lateral](other/lateral3d.png) |
 
 ### Montaje del Vehículo
 
