@@ -316,8 +316,79 @@ Aquí dejo el paso a paso de la realización de la app:
 
 ### Diagrama de logica de evasion de objetos
  ![Diagrama del codigo de evasion de objetos](other/diagrama_esquive.png)
+# Desarrollo de Códigos Combinados
 
-#
+---
+
+## Para este momento necesitamos una lógica que nos permita:
+
+1.  **Un botón de inicio:** Un botón que energice el vehículo y programe el inicio del código al enviar una señal.
+
+2.  **Detección y conteo de líneas:** Girar en la dirección correcta al detectar una línea y llevar el conteo de las mismas para saber las vueltas.
+
+3.  **Recepción de comandos de la app:** Recibir comandos de la aplicación cuando se detecta un objeto en la pista, incluyendo su color y posición.
+    * **Orientación:** Orientarse para quedar al frente del objeto.
+    * **Esquive:** Esquivarlo dependiendo de su color (Rojo por derecha, Verde por izquierda).
+
+4.  **Centrado del vehículo:** Centrar el vehículo según las paredes exteriores cuando no esté recibiendo comandos de objetos detectados.
+
+5.  **Estacionamiento:** Estacionarse en paralelo en el área indicada al final del recorrido.
+
+---
+
+## Con nuestros objetivos claros, desarrollamos una máquina de estados capaz de abarcar todo lo requerido y cambiando de estado según las condiciones impuestas:
+
+### ESTADO_NORMAL $\leftrightarrow$ SIGUIENDO_OBJETO $\leftrightarrow$ ESQUIVANDO
+
+---
+
+### ESTADO_NORMAL:
+
+En este modo abarcamos todos los objetivos del código 1 de vueltas a la pista, donde detectamos las líneas que nos indican el cruce. Mientras no estemos evadiendo objetos, estamos centrando el vehículo dependiendo de la distancia con las paredes laterales. Además, añadimos la recepción de comandos de la aplicación para indicarnos que hay un objeto, lo cual nos hace cambiar al estado "SIGUIENDO_OBJETO".
+
+* **Navegación básica siguiendo líneas:**
+    * Detección de líneas de colores (azul/naranja).
+    * Centrado automático en el pasillo usando sensores ultrasónicos.
+* Recepción de comandos de la aplicación.
+
+#### Transiciones:
+
+* **A SIGUIENDO_OBJETO:** Cuando recibe el comando 'R' o 'G' por la aplicación.
+* Permanece en estado hasta nueva detección.
+
+---
+
+### SIGUIENDO_OBJETO:
+
+En este estado, orientamos la dirección del vehículo con el servomotor en función de los comandos recibidos por la aplicación, ya sea a su orientación izquierda (I), derecha (D) o centro (C). Cuando se detecta que el comando de distancia del objeto es menor o igual a 30 cm, se realizará el cambio al estado "ESQUIVANDO". Si el objeto se pierde de vista por alguna razón, volveremos al estado "NORMAL".
+
+* Orienta el servo según la posición del objeto detectado.
+* Mantiene el motor activo para seguir el objetivo.
+* Procesa la orientación del objeto (Izquierda/Derecha/Centro).
+
+#### Transiciones:
+
+* **A ESQUIVANDO:** Cuando el objeto está muy cerca ($\le 30 \text{cm}$).
+* **A ESTADO_NORMAL:** Cuando pierde el objeto (comando 'N').
+
+---
+
+### ESQUIVANDO:
+
+* Ejecuta la secuencia de esquive en 6 etapas:
+    * **Case 0: Orientación inicial (300ms):** Servo hacia el lado de esquive.
+    * **Case 1: Preparación (tiempo variable):** Activación del motor.
+    * **Case 2: Esquive activo (1200ms):** Avance lateral evitando el obstáculo.
+    * **Case 3: Reorientación interrumpible (300ms):** Giro hacia el lado contrario para retorno.
+    * **Case 4: Retorno interrumpible (3000ms):** Avance de vuelta al curso original.
+    * **Case 5: Finalización (100ms):** Centrado y retorno al estado normal.
+* Los "Case 3" y "Case 4" son interrumpibles si se detecta un objeto mientras se está retornando para cambiar al estado "SIGUIENDO_OBJETO".
+
+#### Transiciones:
+
+* **A SIGUIENDO_OBJETO:** Durante las etapas 3-4 si detecta un nuevo objeto.
+* **A ESTADO_NORMAL:** Al completar la secuencia de esquive.
+
  
 ## Video resumen de las pruebas de vuelta a la pista y esquive de objetos.
 
