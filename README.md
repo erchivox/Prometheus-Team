@@ -172,6 +172,12 @@ Luego, una rama se dirige al **regulador de voltaje XL6009**, que proporciona un
 
 Adicionalmente, derivamos la batería LiPo para alimentar la placa **Arduino**. Este voltaje se regula mediante un **módulo DSN-Mini 360** configurado a 6 voltios. Esta salida se conecta directamente al pin Vin de la placa Arduino, donde también conectamos el servomotor que controla la dirección del vehículo.
 
+ ### Cambios agregados a las conexiones en el sistema de alimentacion:
+  1. Alimentamos ambos microcontroladores con el mismo reductor de voltaje a 7v.
+  2. Agregamos un reductor de voltaje exclusivo para sensores ultrasonicos e infrarrojos y el servomotor de la direccion(que ahora se alimenta del reducctor y no del arduino).
+
+![Diagrama de alimentacion2](schemes/diagrma-alimentacion2.jpg)
+
 ### Cálculo del Consumo Energético Total
 
 | Componente | Cantidad | Consumo estimado (mA) | Total (mA) |
@@ -212,6 +218,12 @@ Cada uno de nuestros sensores desempeña funciones específicas para guiar el ve
 * Los **sensores ultrasónicos** se encuentran al frente y en los laterales del vehículo, midiendo distancias largas para mantener nuestros márgenes de movimiento con respecto a las paredes laterales y la frontal.
 * El **sensor giroscopio** nos ayuda a mantener una trayectoria recta a través de la pista y a realizar giros precisos, guiándonos según nuestros grados iniciales.
 * Finalmente, nuestro **sensor de color** identifica las líneas en el mapa, permitiéndonos recorrer la pista de manera eficiente.
+
+### Cambios realizados al diagrama durante el desarrollo:
+  1. Agregamos un segundo microprocesador arduino para contralar el modulo puente H y asi evitar interferencias. 
+  2. Agregamos un boton para iniciar el codigo de esta manera el vehiculo estara encendido y calibrandoce esperando para iniciar el recorrido.
+     
+ ![Diagrama de Sensores](schemes/diagrama-sensores2.jpg)
 
 ---
 
