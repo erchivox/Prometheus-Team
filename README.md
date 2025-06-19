@@ -205,8 +205,11 @@ Adicionalmente, derivamos la batería LiPo para alimentar la placa **Arduino**. 
 `Autonomía ≈ 2200 mAh / 858 mA ≈ 2.56 horas`
 
 > ⚠️ *Nota:* Este valor es teórico y asume un consumo constante. En la práctica, el consumo del motor puede aumentar significativamente si se encuentra con un obstáculo, por lo que la autonomía real podría variar.
-
 ---
+
+##  ¿Porque Seleccionamos esta Fuente de Alimentacíon?
+
+Seleccionamos una bateria LiPo (Bateria de Polimero de Litio) por su alta capacidad de almacenamiento de energía y al mismo tiem su bajo peso, en especifico nuestra bateria marca (Ovonic 2S 2200mAh 50c) donde las siglas 2S significa que la bateria es de dos celdas, cada una de ellas tiene un voltaje nominal de 3,7V, en total nuestra bateria tiene 7,4V nominales; cuando se menciona 2200mAh (Miliamperio-hora) nos referimos a la  capacidad de almacenamiento de energía de la bateria, optamos por esa cantidad de miliamperios por su rendimiento en pruebas de larga duración; y para finalizar cuando nos referimos a 50c, hablamos de la tasa de descarga de la bateria, esto nos indica la velocidad a la que la bateria puede descargarse de forma segura, en nuestro caso 50c nos permite descargar la bateria cincuenta veces su capacidad nominal.
 
 ##  Sistema de Detección de Objetos
 
@@ -253,12 +256,24 @@ El diseño de nuestro vehículo comenzó con un **modelo 3D en Tinkercad** para 
 ### Diseño de base 3d
 Teniendo en cuenta el modelo diseñado en carton empezamos con la modelacion en 3d de nuestro vehiculo para construirlo con un material mas resistente que no sufra los defectos de nuestra primera base de carton.
 
-| ![diseño de base](other/base3d.png) | ![diseño de la base](other/base3d2.png) |
-| :----: | :---------- |
-| ![Montaje de la Nueva Base 2](other/base_servo.png) | ![Montaje de la Nueva Base 2](other/base_servo2.png) |
-|![Montaje de la Nueva Base 2](other/base3d3.png)|![Montaje de la Nueva Base 2](other/base3d4.png)  |
-| ![Montaje de la Nueva Base 4](other/protectorUltrasonico3d.jpeg) | ![Montaje de la Nueva Base 3](other/foto_impresion1.jpg) |
-| ![Montaje de la Nueva Base 4](other/aleron3d.jpeg) | Diseñamos una base para servo para que se ajuste de manera acorde a la base y se mantenga firme al momento de mover la transmision,  un protector para los sensores ultrasonicos y el aleron trasero para seguir con la idea de asemejarnos a un vehiculo de formula uno. Todos estos modelos estaran en la carpeta de models. |
+| Imagen | Descripción |
+| :----: | :---------- | 
+| ![diseño de la base](other/base3d2.png) |
+| ![diseño de la base](other/modelo3dgris.jpeg) |
+| ![Montaje de la Nueva Base 2](other/base3d3.png)|
+| ![diseño de la base](other/modelointermediogris.jpeg) |
+| ![Montaje de la Nueva Base 4](other/protectorUltrasonico3d.jpeg) | 
+| ![diseño de la base](other/modelo3drojo.jpeg) |
+| ![diseño de la base](other/modelo3drojo2.jpeg) |
+| ![diseño de la base](other/modelointermediofull.jpeg) |
+| ![diseño de la base](other/modelo3drojo3.jpeg) |
+| ![diseño de la base](other/modelo3drojo4.jpeg) |
+| ![diseño de la base](other/modelo3drojo5.jpeg) |
+| ![diseño de la base](other/modelo3dnegro2.jpeg) |
+| ![diseño de la base](other/modelo3dnegro3.jpeg) |
+| ![diseño de la base](other/modelo3dnegro.jpeg) |
+| ![diseño de base](other/modelo3dazul.jpeg) |
+| ![Montaje de la Nueva Base 4](other/impresion3dterminada.jpeg) | Diseñamos una base para servo para que se ajuste de manera acorde a la base y se mantenga firme al momento de mover la transmision,  un protector para los sensores ultrasonicos y el aleron trasero para seguir con la idea de asemejarnos a un vehiculo de formula uno. Todos estos modelos estaran en la carpeta de models. |
 
 
 ---
@@ -269,7 +284,8 @@ Teniendo en cuenta el modelo diseñado en carton empezamos con la modelacion en 
 | :----: | :---------- |
 | ![Segunda Base Impresión 3D](other/1.jpg) | Realizamos un cambio del material de la base. El cartón fue el material de prueba para modificar el diseño de todas las maneras posibles. Con el molde final de nuestro vehículo, procedimos a imprimir la base en 3D. |
 | ![Montaje de la Nueva Base](other/proceso.jpg) | Inicio del proceso de cambio de base, montando la transmisión y el diferencial del vehículo. |
-| ![Montaje de la Nueva Base 2](other/proceso-2.jpg) | ![Montaje de la Nueva Base 3](other/proceso-3.jpg) |
+| ![Montaje de la Nueva Base 2](other/proceso-2.jpg) | 
+| ![Montaje de la Nueva Base 3](other/proceso-3.jpg) |
 | ![Montaje de la Nueva Base 4](other/proceso-4.jpg) | Se continúa con el ensamblaje de la nueva base. |
 
 ## Problemas encontrados. 
