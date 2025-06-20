@@ -282,10 +282,9 @@ Teniendo en cuenta el modelo diseñado en carton empezamos con la modelacion en 
 
 | Imagen | Descripción |
 | :----: | :---------- |
-| ![Segunda Base Impresión 3D](other/1.jpg) | Realizamos un cambio del material de la base. El cartón fue el material de prueba para modificar el diseño de todas las maneras posibles. Con el molde final de nuestro vehículo, procedimos a imprimir la base en 3D. |
-| ![Montaje de la Nueva Base](other/proceso.jpg) | Inicio del proceso de cambio de base, montando la transmisión y el diferencial del vehículo. |
-| ![Montaje de la Nueva Base 2](other/proceso-2.jpg) | 
-| ![Montaje de la Nueva Base 3](other/proceso-3.jpg) |
+| ![Montaje de la Nueva Base](other/proceso.jpg) | Inicio del proceso de cambio de base del prototipo hecho en carton a nuestra impresion 3d y pequeña modificacion en el primer piso de nuestro vehiculo. |
+| ![Montaje de la Nueva Base 2](other/proceso-2.jpg) | Aca podemos observar la colocacion del sistema de dirección y tracción trasera. |
+| ![Montaje de la Nueva Base 3](other/proceso-3.jpg) | Empezamos a realizar todo el cableado de algunos componentes. |
 | ![Montaje de la Nueva Base 4](other/proceso-4.jpg) | Se continúa con el ensamblaje de la nueva base. |
 
 ## Problemas encontrados. 
