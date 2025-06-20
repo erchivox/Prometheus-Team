@@ -258,22 +258,22 @@ Teniendo en cuenta el modelo diseñado en carton empezamos con la modelacion en 
 
 | Imagen | Descripción |
 | :----: | :---------- | 
-| ![diseño de la base](other/base3d2.png) |
-| ![diseño de la base](other/modelo3dgris.jpeg) |
-| ![Montaje de la Nueva Base 2](other/base3d3.png)|
-| ![diseño de la base](other/modelointermediogris.jpeg) |
-| ![Montaje de la Nueva Base 4](other/protectorUltrasonico3d.jpeg) | 
-| ![diseño de la base](other/modelo3drojo.jpeg) |
-| ![diseño de la base](other/modelo3drojo2.jpeg) |
-| ![diseño de la base](other/modelointermediofull.jpeg) |
-| ![diseño de la base](other/modelo3drojo3.jpeg) |
-| ![diseño de la base](other/modelo3drojo4.jpeg) |
-| ![diseño de la base](other/modelo3drojo5.jpeg) |
-| ![diseño de la base](other/modelo3dnegro2.jpeg) |
-| ![diseño de la base](other/modelo3dnegro3.jpeg) |
-| ![diseño de la base](other/modelo3dnegro.jpeg) |
-| ![diseño de base](other/modelo3dazul.jpeg) |
-| ![Montaje de la Nueva Base 4](other/impresion3dterminada.jpeg) | Diseñamos una base para servo para que se ajuste de manera acorde a la base y se mantenga firme al momento de mover la transmision,  un protector para los sensores ultrasonicos y el aleron trasero para seguir con la idea de asemejarnos a un vehiculo de formula uno. Todos estos modelos estaran en la carpeta de models. |
+| ![diseño de la base](other/base3d2.png) | Empezamos realizando el primer piso en base a las medidas que teniamos previamente, en el software de Tinkercad. |
+| ![diseño de la base](other/modelo3dgris.jpeg) | En nuestro primer piso realizamos la base donde encajara nuestro motor, para ello realizamos un agujero con el diametro del motor, y un pequeño espacio para la union de los ejes. |
+| ![Montaje de la Nueva Base 2](other/base3d3.png)| Luego de ya tener fijado nuestro motor empezamos a diseñar y probar el espacio en donde encajaria el soporte para nuestro servomotor. Ademas agregamos el soporte para nuestros soportes hexagonales. |
+| ![diseño de la base](other/modelointermediogris.jpeg) | Por debajo del vehiculo realizamos el espacio para nuestro sensor de color (posteriormente se cambio de posicion para optimizar el rendimiento del vehiculo).  |
+| ![Montaje de la Nueva Base 4](other/protectorUltrasonico3d.jpeg) | Empezamos a probar el segundo piso con las mismas medidas del piso de abajo y la altura que habria entre los dos pisos. |
+| ![diseño de la base](other/modelo3drojo.jpeg) | En el segundo piso realizamos los espacios para los tornilos que fijarian los separadores hexagonales al segundo piso. Ademas se hicieron espacios para el interruptor de encendido y espacio para fijar la bateria y el dispositivo movil mediante precintos de seguridad. |
+| ![diseño de la base](other/modelo3drojo2.jpeg) | A nuestro segundo piso le agregamos una pequeña base para nuestro medidor de voltaje. |
+| ![diseño de la base](other/modelointermediofull.jpeg) | Volviendo a nuestro primer piso realizamos medidas con nuestros componentes y terminamos de arreglar algunos detalles. |
+| ![diseño de la base](other/modelo3drojo3.jpeg) | Primer y segundo piso ya armados con su respectiva separación. |
+| ![diseño de la base](other/modelo3drojo4.jpeg) | Agregamos un aleron al diseño como toque estetico. |
+| ![diseño de la base](other/modelo3drojo5.jpeg) | Vista final de como quedo todo el diseño 3d. |
+| ![diseño de la base](other/modelo3dnegro2.jpeg) | Exportamos nuestro diseño a Fusion 360, para trabajar con mas precision y agregar las tolerancias para realizar la impresion 3d. |
+| ![diseño de la base](other/modelo3dnegro3.jpeg) | Terminamos de trabajar con las tolerancias respectivas y haber confirmado todas las medidas. | 
+| ![diseño de la base](other/modelo3dnegro.jpeg) | Debajo del vehiculo redondeamos el sobresaliente de la base de nuestro motor para darle un toque mas estetico y funcional. |
+| ![diseño de base](other/modelo3dazul.jpeg) | Luego de terminar todos estos ajustes procedimos a exportar cada parte del diseño de forma independiente en un formato (STL). |
+| ![Montaje de la Nueva Base 4](other/impresion3dterminada.jpeg) | Y aca podemos observar los resultados finales de la impresión 3d. |
 
 
 ---
