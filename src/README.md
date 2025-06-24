@@ -18,13 +18,13 @@ El proyecto de Arduino utiliza las siguientes librerías. Para asegurar una comp
     * **Tipo**: Librería externa (Adafruit).
     * **Descripción**: Controla el sensor de color TCS34725, permitiendo la lectura de valores RGB para la detección de colores en el entorno.
     * **Instalación**: Se instala a través del **Gestor de Librerías del IDE de Arduino** buscando "Adafruit TCS34725".
-    * **Documentación**: [Repositorio de GitHub de Adafruit_TCS34725](https://github.com/adafruit/Adafruit_TCS34725) | [Tutorial de Adafruit sobre TCS34725](https://learn.adafruit.com/adafruit-tcs34725-rgb-color-sensor?view=all)
+    * **Documentación**: [Repositorio de GitHub de Adafruit_TCS34725](https://github.com/adafruit/Adafruit_TCS34725) | [Overview de Adafruit sobre TCS34725](https://learn.adafruit.com/adafruit-color-sensors/overview)
 
 * **`MPU6050.h`**:
     * **Tipo**: Librería externa (Electronic Cats).
     * **Descripción**: Facilita la interacción con el giroscopio y acelerómetro MPU-6050, proporcionando datos de movimiento y orientación para la navegación del vehículo.
     * **Instalación**: Se instala a través del **Gestor de Librerías del IDE de Arduino** buscando "MPU6050" (by Electronic Cats).
-    * **Documentación**: [Repositorio de GitHub de MPU6050 (Electronic Cats)]([https://github.com/jrowberg/i2cdevlib/tree/master/Arduino/MPU6050](https://github.com/ElectronicCats/mpu6050))
+    * **Documentación**: [Repositorio de GitHub de MPU6050 Electronic Cats](https://github.com/ElectronicCats/mpu6050)
 
 * **`Servo.h`**:
     * **Tipo**: Librería estándar de Arduino.
