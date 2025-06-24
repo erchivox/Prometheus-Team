@@ -438,7 +438,7 @@ Haz clic en la imagen para ver el vídeo:
 
 Haz clic en la imagen para ver el vídeo:
 
-[![Mira el video del proyecto](other/prueba-vuelta.png)](https://youtu.be/E-xsGcDSaJY?si=9i87w-iJ8TijE_ca)
+[![Mira el video del proyecto](other/prueba-vuelta.png)]([[[https://youtu.be/E-xsGcDSaJY?si=9i87w-iJ8TijE_ca](https://youtube.com/shorts/wI_OLS1nWhc?si=8k_4ca-2helcTpH-)](https://www.youtube.com/shorts/wI_OLS1nWhc)](https://youtube.com/shorts/wI_OLS1nWhc?si=868zlHss_CnnXe10))
 
 ## Prueba de evacion de obstaculos
 
