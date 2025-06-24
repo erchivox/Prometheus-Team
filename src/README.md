@@ -1,11 +1,67 @@
-Control software
-====
+# Software del Vehículo Autónomo WRO Prometheus
 
-This directory must contain code for control software which is used by the vehicle to participate in the competition and which was developed by the participants.
+## Código del Microcontrolador (Arduino)
 
-All artifacts required to resolve dependencies and build the project must be included in this directory as well.
+El software del microcontrolador para nuestro vehículo autónomo ha sido desarrollado utilizando el IDE de Arduino. Este código gestiona la interacción directa con los sensores y actuadores del vehículo.
 
-# APP WRO Prometheus Desarrollada en Android Studio
+### Librerías del Proyecto Arduino
+
+El proyecto de Arduino utiliza las siguientes librerías. Para asegurar una compilación exitosa, es fundamental que estas librerías estén instaladas en tu IDE de Arduino.
+
+* **`Wire.h`**:
+    * **Tipo**: Librería estándar de Arduino.
+    * **Descripción**: Permite la comunicación a través del bus I2C (Inter-Integrated Circuit), fundamental para interactuar con sensores como el TCS34725 y el MPU6050.
+    * **Instalación**: Viene preinstalada con el IDE de Arduino. No se requiere acción adicional.
+    * **Documentación**: [Referencia de la Librería Wire (Arduino)](https://www.arduino.cc/reference/en/libraries/wire/)
+
+* **`Adafruit_TCS34725.h`**:
+    * **Tipo**: Librería externa (Adafruit).
+    * **Descripción**: Controla el sensor de color TCS34725, permitiendo la lectura de valores RGB para la detección de colores en el entorno.
+    * **Instalación**: Se instala a través del **Gestor de Librerías del IDE de Arduino** buscando "Adafruit TCS34725".
+    * **Documentación**: [Repositorio de GitHub de Adafruit_TCS34725](https://github.com/adafruit/Adafruit_TCS34725) | [Tutorial de Adafruit sobre TCS34725](https://learn.adafruit.com/adafruit-tcs34725-rgb-color-sensor?view=all)
+
+* **`MPU6050.h`**:
+    * **Tipo**: Librería externa (Electronic Cats).
+    * **Descripción**: Facilita la interacción con el giroscopio y acelerómetro MPU-6050, proporcionando datos de movimiento y orientación para la navegación del vehículo.
+    * **Instalación**: Se instala a través del **Gestor de Librerías del IDE de Arduino** buscando "MPU6050" (by Electronic Cats).
+    * **Documentación**: [Repositorio de GitHub de MPU6050 (Electronic Cats)]([https://github.com/jrowberg/i2cdevlib/tree/master/Arduino/MPU6050](https://github.com/ElectronicCats/mpu6050))
+
+* **`Servo.h`**:
+    * **Tipo**: Librería estándar de Arduino.
+    * **Descripción**: Permite controlar motores servo, utilizados para movimientos precisos en el vehículo (por ejemplo, dirección o manipulación).
+    * **Instalación**: Viene preinstalada con el IDE de Arduino. No se requiere acción adicional.
+    * **Documentación**: [Referencia de la Librería Servo (Arduino)](https://www.arduino.cc/reference/en/libraries/servo/)
+
+* **`ColorConverterLib.h`**:
+    * **Tipo**: Librería externa.
+    * **Descripción**: Utilizada para la conversión entre diferentes espacios de color (ej. RGB a HSV/HSL), optimizando el procesamiento y la interpretación de los datos del sensor de color.
+    * **Instalación**: Esta librería puede no estar disponible directamente en el Gestor de Librerías de Arduino. Se recomienda descargarla desde su repositorio de GitHub. Para instalarla, descargue el archivo ZIP y añádalo a su IDE de Arduino (`Sketch > Incluir Librería > Añadir Librería .ZIP`).
+    * **Documentación/Repositorio**: Puedes encontrar el código fuente y más detalles en el repositorio oficial de GitHub: **[Arduino-ColorConverter](https://github.com/luisllamasbinaburo/Arduino-ColorConverter/tree/master)**
+
+---
+
+### Preparación del Proyecto Arduino
+
+Para cargar el código en el microcontrolador de su vehículo:
+
+1.  **Requisitos Previos**:
+    * Tenga instalado el **IDE de Arduino** en su computadora.
+    * Asegúrese de haber instalado todas las librerías externas mencionadas (Adafruit_TCS34725, MPU6050, ColorConverterLib) a través del Gestor de Librerías de Arduino o manualmente según sea necesario.
+
+2.  **Abrir el Proyecto**:
+    * Abra el archivo `.ino` principal de su proyecto de Arduino en el IDE de Arduino.
+
+3.  **Seleccionar Placa y Puerto**:
+    * En el IDE de Arduino, vaya a `Herramientas > Placa` y seleccione el modelo de Arduino que está utilizando (ej., Arduino Uno, ESP32 Dev Module, etc.).
+    * Luego, vaya a `Herramientas > Puerto` y seleccione el puerto serie al que está conectado su Arduino.
+
+4.  **Verificar y Subir**:
+    * Haga clic en el botón "Verificar" (el checkmark) para compilar el código y comprobar errores.
+    * Una vez verificado, haga clic en el botón "Subir" (la flecha) para cargar el código a su microcontrolador Arduino.
+
+---
+
+## APP WRO Prometheus Desarrollada en Android Studio
 
 Este directorio contiene el código fuente y los artefactos necesarios para la aplicación **WRO Prometheus**, que sirve para procesar datos de imágenes para nuestro Vehículo Autónomo en la competencia. Aquí encontrarás toda la información relevante sobre las tecnologías utilizadas y cómo preparar el proyecto.
 
