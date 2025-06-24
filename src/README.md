@@ -12,7 +12,7 @@ El proyecto de Arduino utiliza las siguientes librerías. Para asegurar una comp
     * **Tipo**: Librería estándar de Arduino.
     * **Descripción**: Permite la comunicación a través del bus I2C (Inter-Integrated Circuit), fundamental para interactuar con sensores como el TCS34725 y el MPU6050.
     * **Instalación**: Viene preinstalada con el IDE de Arduino. No se requiere acción adicional.
-    * **Documentación**: [Referencia de la Librería Wire (Arduino)](https://www.arduino.cc/reference/en/libraries/wire/)
+    * **Documentación**: [Referencia de la Librería Wire (Arduino)](https://docs.arduino.cc/language-reference/en/functions/communication/wire/)
 
 * **`Adafruit_TCS34725.h`**:
     * **Tipo**: Librería externa (Adafruit).
