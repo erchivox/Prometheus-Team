@@ -232,16 +232,17 @@ Cada uno de nuestros sensores desempeña funciones específicas para guiar el ve
 
 ---
 
-### Timelapse Diseñando los diagramas de nuestro vehiculo autonomo:
+### Timelapse de Diseño de Circuitos
 
 Aquí puedes observar un timelapse del proceso de diseño de los diagramas de alimentación y de las conexiones de entrada/salida de nuestros microcontroladores.
 
 Haz clic en la imagen para ver el vídeo:
 
-[![Mira el video del proyecto](http://img.youtube.com/vi/0/0.jpg)](https://youtube.com/shorts/UtEvRMK07D0?si=VvvrS2JtITUjtCgx)
+<a href="https://youtube.com/shorts/UtEvRMK07D0?si=VvvrS2JtITUjtCgx" target="_blank">
+  <img src="https://github.com/erchivox/Prometheus-Team/blob/f2510ccf25a47e93904d0bfb8a12c54cac5ecb01/other/Dise%C3%B1ando%20Diagramas-Cover.jpg" alt="Miniatura del Video Timelapse de Diseño de Circuitos" width="480px">
+</a>
 
 ---
-
 
 ##  Paso a Paso de la Construcción
 
@@ -306,7 +307,9 @@ Tras el cambio a la base impresa en 3D, realizamos una mejora significativa en e
 
 Haz clic en la imagen para ver el vídeo:
 
-[![Mira el video del proyecto](http://img.youtube.com/vi/1/0.jpg)](https://www.youtube.com/shorts/rl1eokkc18E)
+<a href="https://www.youtube.com/shorts/rl1eokkc18E" target="_blank">
+  <img src="other/TIMELAPSE.SIMPLIFICANDO-Cover.jpg" alt="Miniatura del Video de Mejora de Cableado" width="480px">
+</a>
 
 ---
 
