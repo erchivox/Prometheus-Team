@@ -85,6 +85,8 @@ Este proyecto ha sido el resultado del esfuerzo y la dedicación de todo nuestro
 | ![Dirección](other/direccion.jpg) | **Sistema de Dirección** | Construido con piezas LEGO, su tamaño es ideal y permite adaptar un servomotor de 180 grados para controlar el movimiento. El servomotor se centra a 90 grados, gira a la izquierda a 180 grados y a la derecha a 0 grados. |
 | ![Separadores](other/separadores.jpg) | **Separadores de Acrílico** | Facilitan un montaje cómodo y modular. Girar los pilares permite desatornillar y desmontar el vehículo rápidamente. |
 
+
+
 ### Componentes de Detección
 
 | Imagen | Nombre de Componente | Descripción |
@@ -230,6 +232,17 @@ Cada uno de nuestros sensores desempeña funciones específicas para guiar el ve
 
 ---
 
+### Timelapse Diseñando los diagramas de nuestro vehiculo autonomo:
+
+Aquí puedes observar un timelapse del proceso de diseño de los diagramas de alimentación y de las conexiones de entrada/salida de nuestros microcontroladores.
+
+Haz clic en la imagen para ver el vídeo:
+
+[![Mira el video del proyecto](http://img.youtube.com/vi/0/0.jpg)](https://youtube.com/shorts/UtEvRMK07D0?si=VvvrS2JtITUjtCgx)
+
+---
+
+
 ##  Paso a Paso de la Construcción
 
 ### Etapa de Diseño y Ensamblaje del Vehículo
@@ -286,6 +299,16 @@ Teniendo en cuenta el modelo diseñado en carton empezamos con la modelacion en 
 | ![Montaje de la Nueva Base 2](other/proceso-2.jpg) | Aca podemos observar la colocacion del sistema de dirección y tracción trasera. |
 | ![Montaje de la Nueva Base 3](other/proceso-3.jpg) | Empezamos a realizar todo el cableado de algunos componentes. |
 | ![Montaje de la Nueva Base 4](other/proceso-4.jpg) | Se continúa con el ensamblaje de la nueva base. |
+
+### Mejoras en el orden de los cables y componentes (Segundo Prototipo - Base 3D)
+
+Tras el cambio a la base impresa en 3D, realizamos una mejora significativa en el cableado y la organización interna de nuestro segundo prototipo para optimizar su rendimiento y estética.
+
+Haz clic en la imagen para ver el vídeo:
+
+[![Mira el video del proyecto](http://img.youtube.com/vi/1/0.jpg)](https://www.youtube.com/shorts/rl1eokkc18E)
+
+---
 
 ## Problemas encontrados. 
 
