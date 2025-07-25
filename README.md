@@ -470,4 +470,4 @@ Haz clic en la imagen para ver el vídeo:
 
 Haz clic en la imagen para ver el vídeo:
 
-[![Mira el video del proyecto](other/prueba-evacion-obstaculos.png)]( )
+[![Mira el video del proyecto](other/prueba-evacion-obstaculos.png)](https://www.youtube.com/watch?v=WQM6CjVKSwE)
