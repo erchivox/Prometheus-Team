@@ -112,24 +112,96 @@ Este proyecto ha sido el resultado del esfuerzo y la dedicación de todo nuestro
 
 ---
 
-##  Programas para Detección de Objetos
-| ![OpenCV Logo](other/openCV.png) | ![Android Studio Logo](other/andriod_studio.PNG) |
+# Desarrollo de la Aplicación para la Detección de Objetos
+
+Para la detección de obstáculos, hemos desarrollado una aplicación móvil usando **Android Studio** e implementando la biblioteca **OpenCV**, la app es el cerebro de nuestro vehículo autónomo en cuanto a resolución de obstáculos se refiere. Permite que nuestro vehiculo identifique y reaccione de forma inteligente a los obstáculos en su entorno. El sistema procesa imágenes en tiempo real capturadas por la cámara del teléfono y, mediante una comunicación serial confiable, envía comandos específicos a una placa **Arduino/ESP32** para controlar el comportamiento del vehiculo en el campo de competición.
+
+| ![Logo de OpenCV](other/openCV.png) | ![Logo de Android Studio](other/andriod_studio.PNG) |
 | :-------------------------------: | :---------------------------------------------: |
 
-
-Para la detección de obstáculos, hemos desarrollado una **aplicación móvil con Android Studio** que implementa la biblioteca **OpenCV**. Esta aplicación mejora la capacidad de detección del entorno del robot, identificando objetos rojos y verdes en tiempo real mediante la cámara del dispositivo móvil. Una vez que la aplicación identifica el color predominante, envía esta información a la placa Arduino a través de una conexión USB.
-
-### Flujo del Proceso:
-
-1.  **Captura de Imagen:** La aplicación utiliza la cámara del teléfono para capturar vídeo en tiempo real.
-2.  **Procesamiento con OpenCV:** La imagen se filtra por color para identificar la presencia de objetos rojos o verdes en la escena.
-3.  **Comunicación con Arduino:** Una vez identificado el color, la aplicación envía un código o carácter específico a la placa Arduino (ej., "R" para rojo, "G" para verde).
-4.  **Toma de Decisiones:** Al recibir esta información, Arduino ejecuta una acción preprogramada.
-
-| ![OpenCV Logo](other/app_prueba.jpg) | ![Android Studio Logo](other/app_prueba2.jpg) |
-| :-------------------------------: | :---------------------------------------------: |
-| ![OpenCV Logo](other/app_prueba3.jpg) | ![Android Studio Logo](other/pruebas.jpg) |
 ---
+A continuación, detallaremos algunas de las versiones más importantes de nuestra aplicación, mostrando la evolución del sistema de detección a lo largo del desarrollo y cómo cada etapa nos ayudó a superar los desafíos del proyecto.
+
+## Versión 1: Detección Básica de Colores
+
+Esta es la primera versión del sistema, enfocada en la detección simple de colores. Su objetivo principal era identificar objetos de color **rojo** y **verde** para enviar un comando básico (`R` para rojo, `G` para verde) a través de una conexión USB a la placa Arduino.
+
+El mayor reto en esta etapa fue lograr la comunicación efectiva entre un dispositivo móvil Android y un microcontrolador como el Arduino. Después de numerosos intentos y ajustes, se consiguió establecer una conexión estable y que el Arduino recibiera comandos, al menos de forma básica. Además, fue un desafío significativo lograr aprovechar al máximo la librería **OpenCV** en un entorno móvil, dadas las complejidades de su instalación y configuración en dispositivos Android, pero este obstáculo también fue superado con éxito.
+
+**Imágenes de la Versión 1:**
+
+| <img src="other/app_prueba.jpg" width="400"> | <img src="other/app_prueba2.jpg" width="400"> |
+| :-------------------------------: | :---------------------------------------------: |
+
+---
+
+## Versión 2: Mejora en Detección y Comunicación
+
+Se introdujeron mejoras significativas para hacer el sistema más robusto y preciso. Uno de los principales retos fue **optimizar la aplicación** para que los comandos se enviaran y fueran recibidos por el Arduino lo más rápido posible, al mismo tiempo que se lograba reconocer con precisión la **distancia** y **orientación** del objeto.
+
+Con respecto a la orientación, una complicación particular surgió debido a la **posición horizontal de la cámara** en el teléfono. Al dividir la pantalla en tres sectores para determinar la ubicación del objeto, la perspectiva de la cámara causaba distorsiones, haciendo que un objeto pareciera estar más hacia un lado del vehículo de lo que realmente estaba. A pesar de estos desafíos, se implementaron las siguientes mejoras:
+
+* **Filtrado de Formas:** La aplicación ahora filtra las imágenes para reconocer específicamente **formas rectangulares**, lo que reduce los falsos positivos y mejora la precisión.
+* **Comunicación Detallada:** Se mejoró la comunicación con Arduino para transmitir información más completa. Ahora se envían la **distancia** y la **orientación** del objeto, además de su color.
+* **Mejoras en la UI:** Se optimizó el comportamiento general de la aplicación y se realizaron cambios sutiles en la interfaz de usuario para una mejor experiencia.
+
+**Imágenes de la Versión 2:**
+
+| <img src="other/Deteccion_con_orientacion (2).jpeg" width="400"> | <img src="other/Deteccion_Magenta.jpeg" width="400"> |
+| :-------------------------------: | :---------------------------------------------: |
+
+---
+
+## Versión 3: Sistema de Detección Avanzado y Profesional
+
+Esta versión representa una **reestructuración completa** y un salto cualitativo en el sistema, adaptándose a las nuevas necesidades y a un cambio en la plataforma del vehículo. Tras evaluar los resultados obtenidos en los regionales del país, se hizo evidente la necesidad de un sistema más avanzado y robusto capaz de mejorar significativamente el **esquive de obstáculos**.
+
+Para ello, se realizó un cambio en el vehículo para usar un ESP32 como microcontrolador principal, lo que requirió que la aplicación también se adaptara a esta nueva plataforma. La estrategia clave fue desarrollar un sistema capaz de reconocer dos objetos a la vez y establecer rutas de forma anticipada, en lugar de esquivar los obstáculos uno a uno en tiempo real. Esto llevó la automatización de nuestro vehículo a otro nivel.
+
+Sin embargo, la implementación de la detección dual presentó varios desafíos. El más evidente fue que requirió rehacer gran parte del código de envío de comandos. Para resolverlo, decidimos crear un archivo independiente, el CommandManager, que se encarga exclusivamente de la lógica de comandos y de gestionar la información de cada combinación de obstáculos o "caso".
+
+Además, surgió la necesidad de elevar el teléfono para que la cámara pudiera observar ambos objetos cuando uno estuviera detrás del otro. Esto nos obligó a realizar una modificación en la base del vehículo, un cambio que se detalla más a fondo en la sección correspondiente de nuestro repositorio. Finalmente, una vez resueltos estos retos, se llevaron a cabo una gran cantidad de pruebas para asegurar que el sistema fuera robusto y pudiera enfrentar de manera fiable las distintas combinaciones de obstáculos en la competición.
+Se lograron importantes avances:
+
+* **Solución al Problema de Orientación:** Se corrigió el problema anterior con la división de la pantalla y la orientación. En esta versión, no usamos una división en tres sectores; simplemente dividimos la pantalla en **izquierda y derecha** para identificar la posición lateral de los objetos.
+* **Cálculo de Distancia Avanzado:** El cálculo de distancia se encarga de identificar la posición longitudinal de los objetos (adelante, medio o atrás). Mediante algunos "trucos" y algoritmos optimizados, logramos filtrar y reconocer de manera efectiva **cada caso de colisión o esquive**.
+* **Interfaz Profesional:** La interfaz de usuario fue completamente **rediseñada** para ser más intuitiva, profesional y pulida, ofreciendo una experiencia de usuario superior.
+* **Monitor Serial Integrado:** La incorporación de un **monitor serial** para recibir información directamente del microcontrolador ha sido fundamental para el **debug** y las pruebas en tiempo real, agilizando el desarrollo.
+* **Diseño Único:** La nueva interfaz no solo es 100% más práctica, sino que también cuenta con un diseño único que representa la identidad de nuestro equipo: **Prometheus Team**.
+
+**Imágenes de la Versión 3:**
+| <img src="other/Deteccio_doble_app.jpeg" width="400"> | <img src="other/Monitor_serial.jpeg" width="400"> |
+| :-------------------------------: | :---------------------------------------------: |
+
+---
+
+##  Flujo de Proceso de la Aplicación 
+
+El sistema opera como un ciclo continuo de detección y envío de comandos, con tres componentes principales: la interfaz de usuario, el análisis de imágenes y la comunicación serial.
+
+### Flujo Detallado
+
+* **Inicio y Conexión Automática (`MainActivity`):** Al iniciar, la aplicación solicita los permisos de la cámara e inicializa las librerías de OpenCV. La aplicación no requiere que el usuario conecte manualmente el dispositivo, ya que es capaz de detectar automáticamente el microcontrolador (Arduino/ESP32) y establecer la comunicación serial de forma autónoma.
+* **Captura y Análisis de la Imagen (`ColorAnalyzer`):** Un hilo de alta prioridad se encarga de capturar continuamente imágenes de la cámara. Cada fotograma se envía al `ColorAnalyzer` para su procesamiento.
+* **Preprocesamiento:** El `ColorAnalyzer` convierte el fotograma y aplica técnicas avanzadas como la ecualización de histograma para normalizar la iluminación.
+* **Detección de Colores y Formas:** La aplicación crea "máscaras" para aislar los colores de los obstáculos (rojo, verde y magenta) y busca contornos en esas máscaras, aplicando filtros geométricos para detectar pilares rectangulares.
+* **Cálculo de Distancia:** Se calcula el área de cada objeto detectado en píxeles para estimar su distancia en centímetros.
+* **Generación de Comandos (`CommandManager`):** La información del objeto detectado (color, distancia y posición en la imagen) se envía al `CommandManager`. Este módulo compara los datos del objeto con "casos" predefinidos para la detección de uno o dos objetos y determina el código de comando adecuado.
+* **Envío del Comando (`MainActivity`):** El comando generado se añade a una cola de procesamiento. Un hilo dedicado a la comunicación USB lee la cola y envía el comando al microcontrolador a través del puerto serial, con una pausa mínima para evitar la saturación.
+* **Monitoreo (`SerialMonitorActivity`):** Una actividad separada permite al usuario monitorear en tiempo real los datos que se envían y reciben, lo cual es útil para la depuración del sistema.
+
+### Puntos Clave
+
+* **Conexión Automática:** La aplicación se conecta automáticamente al microcontrolador al detectarlo, lo que agiliza el proceso de inicio.
+* **Visión por Computadora Avanzada:** El uso de OpenCV con ecualización de histograma y filtros geométricos asegura una detección precisa de los pilares.
+* **Doble Detección de Objetos:** La capacidad de diferenciar entre un objeto primario y uno secundario es fundamental para la navegación en el campo de la WRO.
+* **Arquitectura de Hilos:** El uso de múltiples hilos separa las tareas de alto rendimiento (cámara, USB) del hilo principal, garantizando una operación fluida.
+* **Sistema de Comandos Basado en Casos:** La lógica del `CommandManager` es clara y organizada, facilitando su mantenimiento y escalabilidad.
+* **Comunicación USB Serial:** La conexión entre el teléfono y el robot se realiza de forma confiable a través de USB.
+
+
+---
+
 
 ##  Cálculo de Torque y Velocidad
 
