@@ -238,19 +238,35 @@ Gracias a esta reducción, el torque en las ruedas alcanza 0.7306 N·m, lo cual 
 
 ##  Sistema de Alimentación
 
-![Diagrama Fuente de Poder](schemes/power_supply_diagram.jpeg)
+![Diagrama de Alimentación 1](schemes/power_supply_diagram.jpeg)
 
-En este esquema, toda la energía proviene de nuestra **batería LiPo de 2200 mAh** con un voltaje de 7.4 voltios. La batería se interconecta con un interruptor principal que indica el encendido del vehículo.
+Este diagrama representa la versión inicial del sistema de alimentación de nuestro proyecto, concebido con una configuración de componentes más simple. 
 
-Luego, una rama se dirige al **regulador de voltaje XL6009**, que proporciona una salida directa de 7.5 voltios al **módulo L298N** (un puente H con control de rotación). Este puente H tiene una caída de voltaje de 1.5 voltios, por lo que la salida conectada a nuestro motor DC le suministrará aproximadamente 6 voltios, su voltaje de funcionamiento normal.
+En esta iteración, el circuito se alimenta por completo a través de una **batería LiPo de 2200 mAh** (7.4V), cuya energía se distribuye a los distintos módulos después de pasar por un interruptor principal de encendido. Un **regulador de voltaje XL6009** eleva el voltaje para alimentar el puente H **L298N**, asegurando que nuestro motor DC reciba la tensión de funcionamiento adecuada. 
 
-Adicionalmente, derivamos la batería LiPo para alimentar la placa **Arduino**. Este voltaje se regula mediante un **módulo DSN-Mini 360** configurado a 6 voltios. Esta salida se conecta directamente al pin Vin de la placa Arduino, donde también conectamos el servomotor que controla la dirección del vehículo.
+De forma paralela, un **módulo DSN-Mini 360** se encarga de reducir el voltaje de la batería para alimentar directamente el pin Vin de la placa **Arduino**, que a su vez controla el servomotor de dirección. Este diseño sienta las bases del sistema, aunque futuras versiones incorporarán más componentes para optimizar su rendimiento.
 
  ### Cambios agregados a las conexiones en el sistema de alimentacion:
   1. Alimentamos ambos microcontroladores con el mismo reductor de voltaje a 7v.
   2. Agregamos un reductor de voltaje exclusivo para sensores ultrasonicos e infrarrojos y el servomotor de la direccion(que ahora se alimenta del reducctor y no del arduino).
 
-![Diagrama de alimentacion2](schemes/diagrma-alimentacion2.jpg)
+![Diagrama de Alimentación 2](schemes/diagrma-alimentacion2.jpg)
+
+![Diagrama de Alimentación 3](other/Esquema alimentacion 3.png)
+
+Tras la primera iteración, este diagrama detalla una revisión del sistema de alimentación del vehículo autónomo, ahora con una arquitectura que soporta más componentes y funcionalidades. 
+
+La **batería LiPo 2S de 2200mAh** (7.4V, con un máximo de 8.4V) sigue siendo la fuente principal de energía, conectada a un interruptor general. A partir de este punto, la alimentación se ramifica: una rama se dirige a un **step-up/down XL6009** ajustado a 7.5V, que a su vez alimenta el **puente H L298N**. Este entrega aproximadamente 6V al **Motor 25GA-370** tras su caída de voltaje interna. 
+
+De forma paralela, la batería alimenta dos módulos **step-down DSN-Mini 360**. El primero, configurado a 6V, proporciona energía a ambos microcontroladores **ESP32 #1** y **ESP32 #2**. El segundo módulo DSN-Mini 360, con un ajuste de 5V, se encarga de la alimentación general para el **Servomotor SG90 180°** y otros posibles sensores, ofreciendo una línea de voltaje estable y adecuada para estos componentes. Esta configuración ampliada permite una gestión de energía más distribuida y específica para las necesidades de cada subsistema del vehículo.
+
+![Diagrama de Alimentación 4](other/Esquema alimentacion 4.png)!
+
+En este diagrama se define el mapeo de pines y las interconexiones de todos los periféricos. 
+
+El **ESP32 #1** gestiona la locomoción del vehículo, comunicándose con el **Puente H L298N** a través de pines GPIO para controlar el movimiento de los motores, y recibiendo la información de proximidad de los **dos sensores Sharp GP2Y0A21** a través de entradas analógicas. Por su parte, el **ESP32 #2** actúa como el centro de procesamiento de los datos sensoriales y el control de la dirección. 
+
+Cuatro **sensores ultrasónicos HC-SR40** (frontal, trasero y laterales) proporcionan datos de distancia a través de pines de entrada, utilizando divisores de voltaje para proteger el microcontrolador. Además, el **ESP32 #2** se comunica mediante el bus I2C con el **sensor de color TCS34725**, el **sensor IMU MPU-6050** y el **magnetómetro HMC5883L** para obtener datos precisos de orientación y posicionamiento. Finalmente, el **servomotor SG90 180°** de dirección es controlado por una señal PWM, mientras que el **buzzer**, el **LED** y el **interruptor de inicio de programa** se gestionan a través de pines digitales.
 
 ### Cálculo del Consumo Energético Total
 
