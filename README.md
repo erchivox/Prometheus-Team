@@ -358,7 +358,7 @@ $$ V_{out} \approx 3.33 V $$
 
 Este voltaje de salida de aproximadamente 3.3V es compatible con las entradas de 3.3V del ESP32, permitiendo la comunicación segura entre el sensor y el microcontrolador.
 
-A continuación, se muestra el esquema del divisor de voltaje implementado:
+A continuación, se muestra un esquema de conexion del divisor de voltaje simulado en tinkercad:
 
 ![Divisor de voltaje](schemes/Divisor-de-voltaje.png)
 
@@ -368,15 +368,15 @@ A continuación, se muestra el esquema del divisor de voltaje implementado:
 
 **Vista Superior:**
 
-Esta imagen muestra la disposición de los componentes en la parte superior de la vaqueta, incluyendo las resistencias de los divisores de voltaje conectadas a los pines del ESP32 y a los cables del sensor ultrasónico.
+Esta imagen muestra la disposición de los componentes en la parte superior de la baquelita, incluyendo las resistencias de los divisores de voltaje conectadas a los pines del ESP32 y a los cables del sensor ultrasónico.
 
-![Divisores de Voltaje Vista Superior](ruta/a/tu/imagen_vista_superior.jpg)
+![Divisores de Voltaje Vista Superior](other/Divisor-de-voltaje-arriba.jpg)
 
 **Vista Inferior:**
 
-Esta imagen ofrece una perspectiva de las conexiones soldadas en la parte inferior de la vaqueta, mostrando cómo se unen las resistencias para formar los divisores de voltaje y cómo se conectan los cables.
+Esta imagen ofrece una perspectiva de las conexiones soldadas en la parte inferior de la baquelita, mostrando cómo se unen las resistencias para formar los divisores de voltaje y cómo se conectan los cables.
 
-![Divisores de Voltaje Vista Inferior](ruta/a/tu/imagen_vista_inferior.jpg)
+![Divisores de Voltaje Vista Inferior](other/divisor-de-voltaje-abajo.jpg)
 
 ### Timelapse de Diseño de Circuitos
 
