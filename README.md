@@ -328,11 +328,55 @@ Cada uno de los sensores instalados desempeña una función crítica para la nav
 Esta versión representa una mejora significativa en la capacidad de procesamiento y la precisión del sistema de navegación y evasión. Los cambios más importantes incluyen:
 
 1.  **Migración de microcontroladores:** Ambos microcontroladores Arduino fueron reemplazados por dos **ESP32**. Este cambio se hizo necesario para obtener mayor potencia de procesamiento y memoria, lo que permite ejecutar algoritmos más complejos y eficientes para la evasión de obstáculos.
-2.  **Expansión del sistema de sensores:** Se integró un **sensor magnetómetro (HMC5883L)** para mejorar la orientación del vehículo. Los datos de este sensor, combinados con los del IMU y el resto de los sensores, ofrecen una referencia más precisa y robusta para la navegación.
-3.  **Detección de obstáculos ampliada:** Se añadió un **sensor ultrasónico trasero** para mejorar la capacidad de detección y maniobrabilidad en situaciones de marcha atrás, proporcionando datos adicionales para un sistema de evasión más completo.
-4.  **Sistema de notificaciones:** Se agregaron un **LED** y un **buzzer** para proporcionar indicaciones visuales y sonoras sobre el estado operativo del vehículo, como el inicio del recorrido, la detección de obstáculos o cualquier error del sistema.
+2.  **Ajuste de compatibilidad de voltaje:** Se agregaron **cuatro divisores de voltaje** para los sensores ultrasónicos HC-SR04. Los pines de entrada de los ESP32 operan a 3.3V, por lo que era necesario reducir el voltaje de 5V que emiten estos sensores para evitar daños. Este ajuste de compatibilidad se detallará mas adelante.
+3.  **Expansión del sistema de sensores:** Se integró un **sensor magnetómetro (HMC5883L)** para mejorar la orientación del vehículo. Los datos de este sensor, combinados con los del IMU y el resto de los sensores, ofrecen una referencia más precisa y robusta para la navegación.
+4.  **Detección de obstáculos ampliada:** Se añadió un **sensor ultrasónico trasero** para mejorar la capacidad de detección y maniobrabilidad en situaciones de marcha atrás, proporcionando datos adicionales para un sistema de evasión más completo.
+5.  **Sistema de notificaciones:** Se agregaron un **LED** y un **buzzer** para proporcionar indicaciones visuales y sonoras sobre el estado operativo del vehículo, como el inicio del recorrido, la detección de obstáculos o cualquier error del sistema.
 
 Estos cambios consolidan la capacidad del vehículo para operar de manera más autónoma y segura en su entorno, basándose en un flujo de datos más rico y un procesamiento más potente.
+
+---
+
+### Explicación del Divisor de Voltaje para Sensores HC-SR04
+
+Un **divisor de voltaje** es un circuito simple que permite obtener un voltaje de salida (Vout) menor a partir de un voltaje de entrada (Vin), utilizando una configuración de dos resistencias en serie. Esta solución fue esencial para adaptar la salida de 5V del pin `Echo` de los sensores HC-SR04 a la entrada de 3.3V de los pines GPIO del microcontrolador ESP32, protegiéndolo de posibles daños.
+
+La fórmula utilizada para calcular el voltaje de salida es:
+
+$$ V_{out} = V_{in} * (R2 / (R1 + R2)) $$
+
+Para nuestro circuito, utilizamos los siguientes valores de resistencias:
+
+* **R1:** 1 kΩ
+* **R2:** 2 kΩ
+
+Al aplicar la fórmula con estos valores y la entrada de 5V de los sensores, obtenemos el siguiente resultado:
+
+$$ V_{out} = 5V * (2kΩ / (1kΩ + 2kΩ)) $$
+$$ V_{out} = 5V * (2kΩ / 3kΩ) $$
+$$ V_{out} \approx 3.33 V $$
+
+Este voltaje de salida de aproximadamente 3.3V es compatible con las entradas de 3.3V del ESP32, permitiendo la comunicación segura entre el sensor y el microcontrolador.
+
+A continuación, se muestra el esquema del divisor de voltaje implementado:
+
+![Divisor de voltaje](schemes/Divisor-de-voltaje.png)
+
+---
+
+### Implementación Física del Divisor de Voltaje
+
+**Vista Superior:**
+
+Esta imagen muestra la disposición de los componentes en la parte superior de la vaqueta, incluyendo las resistencias de los divisores de voltaje conectadas a los pines del ESP32 y a los cables del sensor ultrasónico.
+
+![Divisores de Voltaje Vista Superior](ruta/a/tu/imagen_vista_superior.jpg)
+
+**Vista Inferior:**
+
+Esta imagen ofrece una perspectiva de las conexiones soldadas en la parte inferior de la vaqueta, mostrando cómo se unen las resistencias para formar los divisores de voltaje y cómo se conectan los cables.
+
+![Divisores de Voltaje Vista Inferior](ruta/a/tu/imagen_vista_inferior.jpg)
 
 ### Timelapse de Diseño de Circuitos
 
