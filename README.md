@@ -238,6 +238,8 @@ Gracias a esta reducción, el torque en las ruedas alcanza 0.7306 N·m, lo cual 
 
 ##  Sistema de Alimentación
 
+###  Versión 1:
+
 ![Diagrama de Alimentación 1](schemes/power_supply_diagram.jpeg)
 
 Este diagrama representa la versión inicial del sistema de alimentación de nuestro proyecto, concebido con una configuración de componentes más simple. 
@@ -246,27 +248,23 @@ En esta iteración, el circuito se alimenta por completo a través de una **bate
 
 De forma paralela, un **módulo DSN-Mini 360** se encarga de reducir el voltaje de la batería para alimentar directamente el pin Vin de la placa **Arduino**, que a su vez controla el servomotor de dirección. Este diseño sienta las bases del sistema, aunque futuras versiones incorporarán más componentes para optimizar su rendimiento.
 
- ### Cambios agregados a las conexiones en el sistema de alimentacion:
-  1. Alimentamos ambos microcontroladores con el mismo reductor de voltaje a 7v.
-  2. Agregamos un reductor de voltaje exclusivo para sensores ultrasonicos e infrarrojos y el servomotor de la direccion(que ahora se alimenta del reducctor y no del arduino).
+###  Versión 2:
 
 ![Diagrama de Alimentación 2](schemes/diagrma-alimentacion2.jpg)
 
-![Diagrama de Alimentación 3](other/Esquema alimentacion 3.png)
+ #### Cambios agregados a las conexiones en el sistema de alimentacion:
+  1. Alimentamos ambos microcontroladores con el mismo reductor de voltaje a 7v.
+  2. Agregamos un reductor de voltaje exclusivo para sensores ultrasonicos e infrarrojos y el servomotor de la direccion(que ahora se alimenta del reducctor y no del arduino).
+
+###  Versión 3:
+
+![Diagrama de Alimentación 3](schemes/Esquema-alimentacio-3.png)
 
 Tras la primera iteración, este diagrama detalla una revisión del sistema de alimentación del vehículo autónomo, ahora con una arquitectura que soporta más componentes y funcionalidades. 
 
 La **batería LiPo 2S de 2200mAh** (7.4V, con un máximo de 8.4V) sigue siendo la fuente principal de energía, conectada a un interruptor general. A partir de este punto, la alimentación se ramifica: una rama se dirige a un **step-up/down XL6009** ajustado a 7.5V, que a su vez alimenta el **puente H L298N**. Este entrega aproximadamente 6V al **Motor 25GA-370** tras su caída de voltaje interna. 
 
 De forma paralela, la batería alimenta dos módulos **step-down DSN-Mini 360**. El primero, configurado a 6V, proporciona energía a ambos microcontroladores **ESP32 #1** y **ESP32 #2**. El segundo módulo DSN-Mini 360, con un ajuste de 5V, se encarga de la alimentación general para el **Servomotor SG90 180°** y otros posibles sensores, ofreciendo una línea de voltaje estable y adecuada para estos componentes. Esta configuración ampliada permite una gestión de energía más distribuida y específica para las necesidades de cada subsistema del vehículo.
-
-![Diagrama de Alimentación 4](other/Esquema alimentacion 4.png)!
-
-En este diagrama se define el mapeo de pines y las interconexiones de todos los periféricos. 
-
-El **ESP32 #1** gestiona la locomoción del vehículo, comunicándose con el **Puente H L298N** a través de pines GPIO para controlar el movimiento de los motores, y recibiendo la información de proximidad de los **dos sensores Sharp GP2Y0A21** a través de entradas analógicas. Por su parte, el **ESP32 #2** actúa como el centro de procesamiento de los datos sensoriales y el control de la dirección. 
-
-Cuatro **sensores ultrasónicos HC-SR40** (frontal, trasero y laterales) proporcionan datos de distancia a través de pines de entrada, utilizando divisores de voltaje para proteger el microcontrolador. Además, el **ESP32 #2** se comunica mediante el bus I2C con el **sensor de color TCS34725**, el **sensor IMU MPU-6050** y el **magnetómetro HMC5883L** para obtener datos precisos de orientación y posicionamiento. Finalmente, el **servomotor SG90 180°** de dirección es controlado por una señal PWM, mientras que el **buzzer**, el **LED** y el **interruptor de inicio de programa** se gestionan a través de pines digitales.
 
 ### Cálculo del Consumo Energético Total
 
@@ -301,24 +299,40 @@ Cuatro **sensores ultrasónicos HC-SR40** (frontal, trasero y laterales) proporc
 
 Seleccionamos una bateria LiPo (Bateria de Polimero de Litio) por su alta capacidad de almacenamiento de energía y al mismo tiem su bajo peso, en especifico nuestra bateria marca (Ovonic 2S 2200mAh 50c) donde las siglas 2S significa que la bateria es de dos celdas, cada una de ellas tiene un voltaje nominal de 3,7V, en total nuestra bateria tiene 7,4V nominales; cuando se menciona 2200mAh (Miliamperio-hora) nos referimos a la  capacidad de almacenamiento de energía de la bateria, optamos por esa cantidad de miliamperios por su rendimiento en pruebas de larga duración; y para finalizar cuando nos referimos a 50c, hablamos de la tasa de descarga de la bateria, esto nos indica la velocidad a la que la bateria puede descargarse de forma segura, en nuestro caso 50c nos permite descargar la bateria cincuenta veces su capacidad nominal.
 
-##  Sistema de Detección de Objetos
+# Sistema de Detección de Objetos
 
-![Diagrama de Sensores](schemes/diagrama-sensores.jpg)
+## Versión 1:
 
-Cada uno de nuestros sensores desempeña funciones específicas para guiar el vehículo y asegurar que no impacte con ningún obstáculo:
+![Diagrama de Sensores 1](schemes/diagrama-sensores.jpg)
 
-* Los **sensores infrarrojos** están ubicados en las diagonales del vehículo, proporcionando una detección rápida y segura para evitar colisiones sorpresa.
-* Los **sensores ultrasónicos** se encuentran al frente y en los laterales del vehículo, midiendo distancias largas para mantener nuestros márgenes de movimiento con respecto a las paredes laterales y la frontal.
-* El **sensor giroscopio** nos ayuda a mantener una trayectoria recta a través de la pista y a realizar giros precisos, guiándonos según nuestros grados iniciales.
-* Finalmente, nuestro **sensor de color** identifica las líneas en el mapa, permitiéndonos recorrer la pista de manera eficiente.
+Cada uno de los sensores instalados desempeña una función crítica para la navegación del vehículo y la prevención de colisiones:
 
-### Cambios realizados al diagrama durante el desarrollo:
-  1. Agregamos un segundo microprocesador arduino para contralar el modulo puente H y asi evitar interferencias. 
-  2. Agregamos un boton para iniciar el codigo de esta manera el vehiculo estara encendido y calibrandoce esperando para iniciar el recorrido.
-     
- ![Diagrama de Sensores](schemes/diagrama-sensores2.jpg)
+* Los **sensores infrarrojos** se posicionan en las diagonales del vehículo, proporcionando una detección rápida y precisa para evitar obstáculos cercanos.
+* Los **sensores ultrasónicos** están ubicados en la parte frontal y en los laterales, midiendo distancias para mantener un margen de seguridad con respecto a las paredes y otros objetos.
+* El **sensor giroscopio** ayuda a mantener una trayectoria estable y recta, facilitando giros precisos y la orientación general del vehículo.
+* El **sensor de color** se utiliza para identificar las líneas de la pista, permitiendo que el vehículo siga la ruta designada de manera autónoma.
 
----
+## Versión 2: 
+
+![Diagrama de Sensores](schemes/diagrama-sensores2.jpg)
+
+#### Mejoras implementadas en el diagrama:
+
+1.  Se incorporó un segundo microprocesador Arduino para gestionar exclusivamente el módulo de puente H. Esta separación de responsabilidades minimiza las interferencias eléctricas y mejora el rendimiento general del sistema.
+2.  Se añadió un botón de inicio para controlar la ejecución del código. Esto permite que el vehículo se encienda y realice las calibraciones iniciales de los sensores, permaneciendo en un estado de espera hasta que se active el recorrido.
+
+## Versión 3: 
+
+![Diagrama de Sensores](schemes/Esquema-alimentacion-4.png)
+
+Esta versión representa una mejora significativa en la capacidad de procesamiento y la precisión del sistema de navegación y evasión. Los cambios más importantes incluyen:
+
+1.  **Migración de microcontroladores:** Ambos microcontroladores Arduino fueron reemplazados por dos **ESP32**. Este cambio se hizo necesario para obtener mayor potencia de procesamiento y memoria, lo que permite ejecutar algoritmos más complejos y eficientes para la evasión de obstáculos.
+2.  **Expansión del sistema de sensores:** Se integró un **sensor magnetómetro (HMC5883L)** para mejorar la orientación del vehículo. Los datos de este sensor, combinados con los del IMU y el resto de los sensores, ofrecen una referencia más precisa y robusta para la navegación.
+3.  **Detección de obstáculos ampliada:** Se añadió un **sensor ultrasónico trasero** para mejorar la capacidad de detección y maniobrabilidad en situaciones de marcha atrás, proporcionando datos adicionales para un sistema de evasión más completo.
+4.  **Sistema de notificaciones:** Se agregaron un **LED** y un **buzzer** para proporcionar indicaciones visuales y sonoras sobre el estado operativo del vehículo, como el inicio del recorrido, la detección de obstáculos o cualquier error del sistema.
+
+Estos cambios consolidan la capacidad del vehículo para operar de manera más autónoma y segura en su entorno, basándose en un flujo de datos más rico y un procesamiento más potente.
 
 ### Timelapse de Diseño de Circuitos
 
