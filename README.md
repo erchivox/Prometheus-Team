@@ -554,6 +554,7 @@ Aquí dejo el paso a paso de la realización de la app:
 
 ### Diagrama de logica de evasion de objetos
  ![Diagrama del codigo de evasion de objetos](other/diagrama_esquive.png)
+
 # Desarrollo de Códigos Combinados
 
 ---
@@ -627,6 +628,77 @@ En este estado, orientamos la dirección del vehículo con el servomotor en func
 * **A SIGUIENDO_OBJETO:** Durante las etapas 3-4 si detecta un nuevo objeto.
 * **A ESTADO_NORMAL:** Al completar la secuencia de esquive.
 
+
+## Cambio de logica de esquive version 2.0 sistema de carriles.
+
+  ### Funcion realizarGiro():
+  Para este momento nos imaginamos un caso mejor donde el esquive fuera mas preciso, anteriormente esabamos implementardo un sistema para girar que consistia en que el vehiculo dependiendo de la distancia lateral giraba mas o menos para luego aplicar un retroceso post giro a ciegas. Esto era ineficiente por que a ciencia cierta nunca sabremos donde terminara el vehiculo por lo que ahora ese retroceso post giro sera controlado por el angulo llegando a un angulo recto dependiendo del conteo de lineas que lleve y el sentido del vehiculo todo gracias a la funcion actualizarGiro que nos proporciona el angulo, un ejemplo de ello con fragmento del codigo:
+
+<img width="728" height="522" alt="calculo_angulo_retroceso" src="https://github.com/user-attachments/assets/b56db8b0-9f01-4cac-bd8f-de8faac6f162" />
+
+Ahora que nos posicionamos siempre en un angulo correcto el vehiculo puede retroceder y con el sensor ultrasonico trasero determinar una distancia suficiente para proceder con los esquives.
+
+### Explicacion de la nueva logica:
+Ahora en lugar de hacer un mismo metodo de esquive para cualquier objeto que identifiquemos haremos un nuevo metodo, gracias a la mejora de la aplicacion podemos identificar 2 objetos a la vez y sus posiciones por lo que dependiendo se como sea la configuracion de los mismos podremos hacer un esquive programado indepediente y unico, de esta manera nos aseguramos de tomar cada caso por separado y con mayor eficacia. 
+
+### Máquina de Estados para Navegación por Carriles
+La lógica del vehículo se gestiona mediante una máquina de estados que transita entre diferentes modos operativos. Este sistema reemplaza el antiguo modelo de "Seguir/Esquivar" por uno más adecuado para la navegación en pista.
+
+ESTADO_NORMAL ↔ ESPERANDO_COMANDO_CARRIL → EVALUANDO_POSICION → GIRANDO_HACIA_CARRIL → MANTENIENDO_CARRIL
+
+
+#### ESTADO_NORMAL:
+Este es el estado inicial y el modo por defecto después de completar un giro en una intersección.
+
+Avanza en línea recta mientras utiliza la función centrarVehiculo() para mantenerse estable en el pasillo con una vigilancia activa, su objetivo principal es buscar la siguiente línea de color con la función detectarColor(). Al encontrar una, inicia la secuencia de giro (realizarGiro) y el ciclo de navegación se repite.
+
+##### Transición: Si no detecta una línea, puede pasar a ESPERANDO_COMANDO_CARRIL después de la maniobra post-giro.
+
+### ESPERANDO_COMANDO_CARRIL:
+En este estado, el vehículo se detiene y espera instrucciones externas.
+
+El motor se apaga y el sistema monitorea activamente el puerto serie para recibir un comando de carril.
+
+#### Transición: Al recibir un comando válido, cambia a EVALUANDO_POSICION.
+
+### EVALUANDO_POSICION:
+Estado de transición muy breve para planificar el cambio de carril.
+
+Lee los sensores ultrasónicos laterales para determinar su posición actual en relación con el carril objetivo. Decide la dirección del giro necesario para alcanzar el nuevo carril.
+
+#### Transición: Inmediatamente cambia a GIRANDO_HACIA_CARRIL.
+
+### GIRANDO_HACIA_CARRIL:
+
+ Aqui aplicaremos una nueva logica donde dependiendo de las distancias laterales nos dameremos cuenta en que parte de la pista nos encontramos, dividiendo la pista en 2 carriles principales y 2 secundarios. Los principales son:
+ 1. Carril 1: A la derecha del vehiculo.
+ 2. Carril 2: A la izquierda del vehiculo.
+Dependiendo de que objeto tengamos al frente tomaremos un carril.
+
+#### Posicionamiento en un carril:
+Dependiendo de a que carril deseemos dirigirnos usaremos diferentes sensores:
+  Carril 1: Sensores derechos Ultrasonico e infrarrojo.
+  Carril 2: Sensores izquierdos Ultrasonico e infrarrojo.
+  
+Para realizar el posicionamiento recurrimos al estado GIRANDO_HACIA_CARRIL, donde mediantes algunas funciones tendremos un giro hacia el carril correspondiendo con cierta inclinacion de la direccion y un tiempo establecido que dependen de la distancia lateral que alla con la pared externa de la pista. Al finalizar pasaremos a un giro de retorno en sentido contrario que terminara cuando el angulo sea recto. 
+
+Durante el primer giro estaremos esperando de igual manera una retroalimentacion del sensor sharp correspondiente para que nos confirme si estamos a una buena distancia de la pared lateral, si estamos muy cerca interrumpira el primer giro dara un breve retroceso y procedera con el giro de retorno. 
+
+#### Transición: Una vez que el vehículo está orientado en el nuevo carril, cambia a MANTENIENDO_CARRIL.
+
+### MANTENIENDO_CARRIL:
+Este es el estado de navegación principal entre intersecciones.
+
+Utiliza un controlador PID para mantener de forma activa y precisa la distancia con la pared lateral (izquierda o derecha, según el carril). Esto le permite seguir el contorno de la pista con gran exactitud.
+
+Control Fino: El sistema prioriza mantener el ángulo correcto; si el vehículo se desvía demasiado, corrige primero su orientación y luego ajusta la distancia a la pared.
+
+#### Transición: Permanece en este estado hasta que detectarColor() encuentra una línea, lo que interrumpe el mantenimiento del carril e inicia un giro de intersección, devolviendo el sistema al ESTADO_NORMAL.
+
+### ESTADO_DETENCION_FINAL:
+El estado final del recorrido. Se activa después de que se cuenta la última línea y se completa el último giro. El vehículo avanza en línea recta durante un tiempo predefinido (1.5 segundos) para posicionarse en la zona de estacionamiento.
+
+#### Transición: Al finalizar el avance, llama a detenerRobot() para apagar todos los motores y finalizar la operación.
  
 ## Video resumen de las pruebas de vuelta a la pista y esquive de objetos.
 
