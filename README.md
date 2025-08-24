@@ -269,19 +269,20 @@ De forma paralela, la batería alimenta dos módulos **step-down DSN-Mini 360**.
 
 ### Cálculo del Consumo Energético Total
 
-| Componente | Cantidad | Consumo estimado (mA) | Total (mA) |
-| :------------------------- | :------- | :-------------------- | :--------- |
+| Componente | Cantidad | Consumo Estimado (mA) | Total (mA) |
+| :------------------------------- | :------: | :--------------------: | :--------: |
 | Motor DC | 1 | 500 mA (en carga) | 500 mA |
 | Servo 180° | 1 | 150 mA (típico) | 150 mA |
-| Sensor ultrasónico HC-SR04 | 3 | 15 mA c/u | 45 mA |
+| Sensor ultrasónico HC-SR04 | 4 | 15 mA c/u | 60 mA |
 | Sensor infrarrojo Sharp | 2 | 30 mA c/u | 60 mA |
-| Sensor TCS34725 (color) | 1 | 3 mA | 3 mA |
-| Arduino Uno | 2 | 50 mA c/u (sin carga) | 100 mA |
-| **TOTAL** | — | — | **858 mA** |
+| ESP32 (sin WiFi/BT y sin carga) | 2 | ~70 mA c/u | 140 mA |
+| Sensor Magnetómetro GY-273 | 1 | ~0.1 mA | 0.1 mA |
+| Sensor Giroscopio/Acelerómetro MPU6050 | 1 | ~3.6 mA | 3.6 mA |
+| **TOTAL** | **—** | **—** | **~913.7 mA** |
 
 ---
 
-### 🔋 Corriente total aproximada: **~858 mA**
+### 🔋 Corriente total aproximada: **~913.7 mA**
 
 ---
 
@@ -291,7 +292,7 @@ De forma paralela, la batería alimenta dos módulos **step-down DSN-Mini 360**.
 `Autonomía (h) = Capacidad de la batería (mAh) / Consumo total (mA)`
 
 **Ejemplo con batería de 2200 mAh:**
-`Autonomía ≈ 2200 mAh / 858 mA ≈ 2.56 horas`
+`Autonomía ≈ 2200 mAh / 913.7 mA ≈ 2.40 horas`
 
 > ⚠️ *Nota:* Este valor es teórico y asume un consumo constante. En la práctica, el consumo del motor puede aumentar significativamente si se encuentra con un obstáculo, por lo que la autonomía real podría variar.
 ---
