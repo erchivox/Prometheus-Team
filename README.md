@@ -487,7 +487,22 @@ Para las pruebas, creamos una imitación de la pista de competición utilizando 
 
 ![Pista de Pruebas](other/pista.jpg)
 
-## Desarrollo de la logica de vueltas a la pista
+## Desarrollo de la logica del vehiculo en el codigo del sensor maestro.
+
+  Para tener un control mas seguro del vehiculo logramos desarrollar un metodo ayudados de la investigacion de la comunidad y de otros proyectos en internet, para crear algo parecido a una brujula digital.
+  
+ FUNCION ENCARGADA DE ENTREGAR EL ANGULO: actualizarGiro(): 
+Esta función es un sistema de fusión de sensores que combina dos fuentes de datos para obtener el ángulo final del vehículo: el MPU6050 (giroscopio) y el magnetómetro (a través de obtenerAngulo()).
+
+Integración del Giroscopio (MPU6050): El giroscopio mide la velocidad de rotación del vehículo. La función toma esta velocidad y la suma a un ángulo acumulado (anguloZ) en cada ciclo de lectura. Es muy preciso a corto plazo, pero tiene un problema: la deriva (pequeños errores que se acumulan con el tiempo).
+
+Para solucionar la deriva del giroscopio, la función llama a obtenerAngulo() a intervalos regulares. El ángulo del magnetómetro es absoluto y no tiene deriva, pero es más susceptible a interferencias externas (como metales o campos magnéticos).
+
+ La función compara el ángulo calculado por el giroscopio con el ángulo de referencia del magnetómetro. La diferencia entre ambos valores se usa para corregir suavemente el ángulo del giroscopio, ajustándolo hacia el valor más confiable del magnetómetro. El ajuste es gradual (* 0.1) para evitar saltos bruscos en la lectura.
+
+Esta combinación aprovecha lo mejor de ambos mundos: la velocidad del giroscopio para detectar movimientos instantáneos y la precisión del magnetómetro para mantener el ángulo sin errores a largo plazo.
+  
+## Logica de vueltas a la pista
 
 Para este momento ya teníamos idea de la lógica de nuestro primer código del primer desafío que seria la vuelta libre a la pista. En esta lógica usaremos las líneas de la pista para marca el momento exacto para cruzar y el conteo de vueltas siendo 4 líneas igual a una vuelta y así cumplir las 3 vueltas que serían 12 líneas, con el sensor giroscopio(mpu6050) mediremos los grados que va girando el vehículo para calcular exactamente los 90grados del cruce de la esquina. Un planteamiento básico que nos sirvió como comienzo. A partir de aquí presentamos los siguientes problemas. 
 •	Falta de detección de líneas: Con el sistema de detección de color tuvimos problemas para detectar las líneas ya que había veces que no la detectaba por la velocidad del vehículo por lo que aumentamos la tasa de refresco a :
