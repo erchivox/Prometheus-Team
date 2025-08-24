@@ -6,7 +6,7 @@ This directory must contain 2 photos of the team (an official one and one funny 
 ---
 
 ### Foto Oficial
-![ Foto Oficial](foto_equipo.jpg)
+![ Foto Oficial](foto_equipo.jpeg)
 
 ---
 
