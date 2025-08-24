@@ -61,7 +61,7 @@ Este proyecto ha sido el resultado del esfuerzo y la dedicación de todo nuestro
 
 ---
 ##  Fotos de equipo
-| ![ Foto Oficial](t-photos/foto_equipo.jpg)  | ![ Foto Divertida](t-photos/foto_equipo_divertida.jpg) | 
+| ![ Foto Oficial](t-photos/foto_equipo.jpeg)  | ![ Foto Equipo](t-photos/foto_equipo2.jpeg) | 
 | :----: | :---------- |
 
 
