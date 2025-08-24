@@ -700,6 +700,8 @@ El estado final del recorrido. Se activa después de que se cuenta la última l�
 
 #### Transición: Al finalizar el avance, llama a detenerRobot() para apagar todos los motores y finalizar la operación.
  
+ ### Diagrama logica de esquive 2.0 sistema de carriles
+ ![Diagrama de logica carriles](other/diagramaV2.png)
 ## Video resumen de las pruebas de vuelta a la pista y esquive de objetos.
 
 Haz clic en la imagen para ver el vídeo:
