@@ -136,11 +136,32 @@ El mayor reto en esta etapa fue lograr la comunicación efectiva entre un dispos
 
 ---
 
+---
+
+---
+
 ## Versión 2: Mejora en Detección y Comunicación
 
 Se introdujeron mejoras significativas para hacer el sistema más robusto y preciso. Uno de los principales retos fue **optimizar la aplicación** para que los comandos se enviaran y fueran recibidos por el Arduino lo más rápido posible, al mismo tiempo que se lograba reconocer con precisión la **distancia** y **orientación** del objeto.
 
-Con respecto a la orientación, una complicación particular surgió debido a la **posición horizontal de la cámara** en el teléfono. Al dividir la pantalla en tres sectores para determinar la ubicación del objeto, la perspectiva de la cámara causaba distorsiones, haciendo que un objeto pareciera estar más hacia un lado del vehículo de lo que realmente estaba. A pesar de estos desafíos, se implementaron las siguientes mejoras:
+Con respecto a la orientación, una complicación particular surgió debido a la **posición horizontal de la cámara** en el teléfono. Al dividir la pantalla en tres sectores para determinar la ubicación del objeto, la perspectiva de la cámara causaba distorsiones, haciendo que un objeto pareciera estar más hacia un lado del vehículo de lo que realmente estaba.
+
+### Cálculo de Distancia por Área
+
+Para estimar la distancia al objeto, se implementó un método basado en la relación inversa entre la distancia y el área aparente del objeto en la imagen. El principio es simple: **cuanto más lejos está un objeto, más pequeño se ve**. Este enfoque requiere una calibración inicial para funcionar.
+
+La fórmula utilizada es la siguiente:
+
+$$ \text{Distancia} = \text{DistanciaConocida} \times \sqrt{\frac{\text{AreaConocida}}{\text{AreaMedida}}} $$
+
+Donde:
+* **DistanciaConocida**: Es una distancia fija y conocida a la que se calibra el sistema (por ejemplo, 30 cm).
+* **AreaConocida**: Es el área en píxeles que ocupa el objeto en la imagen cuando se encuentra a la `DistanciaConocida`. Este valor se guarda una vez durante la calibración.
+* **AreaMedida**: Es el área actual en píxeles que el objeto ocupa en la imagen durante la detección en tiempo real.
+
+Este método permite que, tras una única calibración, el sistema pueda estimar la distancia de forma continua simplemente midiendo el tamaño del objeto detectado.
+
+A pesar de los desafíos, se implementaron las siguientes mejoras:
 
 * **Filtrado de Formas:** La aplicación ahora filtra las imágenes para reconocer específicamente **formas rectangulares**, lo que reduce los falsos positivos y mejora la precisión.
 * **Comunicación Detallada:** Se mejoró la comunicación con Arduino para transmitir información más completa. Ahora se envían la **distancia** y la **orientación** del objeto, además de su color.
