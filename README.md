@@ -200,6 +200,10 @@ El sistema opera como un ciclo continuo de detección y envío de comandos, con 
 * **Sistema de Comandos Basado en Casos:** La lógica del `CommandManager` es clara y organizada, facilitando su mantenimiento y escalabilidad.
 * **Comunicación USB Serial:** La conexión entre el teléfono y el robot se realiza de forma confiable a través de USB.
 
+  
+Diagrama de flujo, diseñado en Lucidchart, para una mejor visualización del funcionamiento de la aplicación WRO Prometheus.
+
+![Diagrama de Flujo de la Aplicación](other/_Diagrama de flujo app.png)
 
 ---
 
