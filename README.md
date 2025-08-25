@@ -14,7 +14,7 @@ Somos un equipo venezolano que representa con orgullo a la **Universidad Polité
    * [Componentes de Detección](#componentes-de-detección)
    * [Componentes de Procesamiento de Información](#componentes-de-procesamiento-de-información)
    * [Componentes de Alimentación](#componentes-de-alimentación)
-* [Programas para Detección de Objetos](#programas-para-detección-de-objetos)
+* [Desarrollo de la Aplicación para la Detección de Objetos](#Desarrollo-de-la-Aplicación-para-la-Detección-de-Objetos)
 * [Cálculo de Torque y Velocidad](#cálculo-de-torque-y-velocidad)
 * [Sistema de Alimentación](#sistema-de-alimentación)
    * [Cálculo del Consumo Energético Total](#cálculo-del-consumo-energético-total)
@@ -203,7 +203,7 @@ El sistema opera como un ciclo continuo de detección y envío de comandos, con 
   
 Diagrama de flujo, diseñado en Lucidchart, para una mejor visualización del funcionamiento de la aplicación WRO Prometheus.
 
-![Diagrama de Flujo de la Aplicación](other/_Diagrama de flujo app.png)
+![Diagrama de Flujo de la Aplicación](other/Diagrama_de_flujo_app.png)
 
 ---
 
