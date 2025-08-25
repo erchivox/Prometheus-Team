@@ -692,9 +692,11 @@ Lee los sensores ultrasónicos laterales para determinar su posición actual en 
 ### GIRANDO_HACIA_CARRIL:
 
  Aqui aplicaremos una nueva logica donde dependiendo de las distancias laterales nos dameremos cuenta en que parte de la pista nos encontramos, dividiendo la pista en 2 carriles principales y 2 secundarios. Los principales son:
- 1. Carril 1: A la derecha del vehiculo.
- 2. Carril 2: A la izquierda del vehiculo.
-Dependiendo de que objeto tengamos al frente tomaremos un carril.
+ 1. Carril 1: A la derecha del vehiculo. Usado para los objetos rojos.
+ 2. Carril 2: A la izquierda del vehiculo. Usado para los objetos verdes.
+ 3. Carril 1 pero a mas distancia de la pared
+ 4. Carril 2 a mas distancia de la pared.
+Dependiendo de que objeto tengamos al frente tomaremos un carril. Hay doble objeto se ejecuta un cambio de carril apenas se consiga entrar en el estado donde mantiene el carril, esto se hace de la misma manera que se dirige al carril en un inicio solo que un poco mas de tiempo. este tiempo depende del comando en especifico.
 
 #### Posicionamiento en un carril:
 Dependiendo de a que carril deseemos dirigirnos usaremos diferentes sensores:
