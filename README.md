@@ -542,10 +542,6 @@ Para culminar con este código realzamos la lógica necesaria para cumplir con l
 
 ## Desarrollo de la logica de evasion de objetos.
 
-   Para la lógica de evasión de objetos tomamos los ejemplos de otro proyecto donde se utilizan las cámaras para procesar las imágenes y mediante programas como open Cv analizar la imagen en búsquedas de figuras y colores par así tener una idea del objeto que tenemos en el rango de visualización y de su ubicación. Nos tomó un tiempo desarrollar una aplicación para teléfonos móviles para usar la cámara de estos y procesar las imágenes empezando con una app simple donde mandábamos comandos al Arduino para asegurarnos que si se pudiera realizar la conexión entre estos dispositivos hasta realizar la aplicación y mandar comandos simples de R(Red) cuando se detecta un objeto rojo y G (Green) cuando se detecta un objeto verde. 
-#Problema: No saber la distancia del objeto.
-Al momento de realizar las pruebas con el Arduino nos dimos cuenta que también necesitábamos encontrar la manera de calcular la distancia del objeto mediante la cámara, por lo que llegaos a la solución que mediante el área detectada del objeto aplicaríamos una formula para que esta me diera la distancia aproximada del objeto y saber cuando esquivar. 
-
 ### Primer esquive:
 Ya con app lista desarrollamos una lógica para el microcontrolador Arduino y de esta manera recibir los comandos de color del objeto y su distancia. Realizando una prueba controlada tuvimos unos errores con la iluminación que nos afectaba el reconocimiento de los colores por que tuvimos que ajustar los valores de los colores para mejorar la detección del objeto que termino siendo mejor pero todavía le faltan mejoras, pero cumplió con el objetivo de identificar el objeto y darnos su distancia aproximada, que a 30 cm el Arduino deberá realizar el giro a la derecha si es rojo(R) y a la izquierda si es verde(G), con un retorno al lado contrario luego de realizar el giro para reincorporarse al centro del carril de la pista. 
 
