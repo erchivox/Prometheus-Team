@@ -11,7 +11,7 @@ This directory must contain 6 photos of the vehicle (from every side, from top a
 ---
 
 ### Vista Trasera
-![Carro - Vista Trasera](detras.JPG)
+![Carro - Vista Trasera](trasera.JPG)
 
 ---
 
