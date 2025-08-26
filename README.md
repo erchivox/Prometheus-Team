@@ -492,8 +492,7 @@ A continuación, se detallan las modificaciones y mejoras implementadas en la te
 
 Para esta nueva versión, se realizó un reajuste estratégico en la posición de varios sensores clave, buscando mayor comodidad y eficiencia. Esto incluyó el reposicionamiento de los sensores de ultrasonido frontales, los sensores Sharp y el sensor de color, que fue desplazado hacia la parte delantera. Adicionalmente, se optimizó el cableado superior para adaptarlo a la nueva configuración de dos microcontroladores ESP32 y la integración de un magnetómetro. Finalmente, se reforzó la base del primer piso mediante el uso de tornillos inferiores para una mayor estabilidad.
 
-![Descripción de la imagen](other/imagen_sensores.jpg)
-![Descripción de la imagen](other/imagen_sensores.jpg)
+![Descripción de la imagen](other/modificacion_base_v3.jpeg)
 
 #### 2. Modificaciones en la base para el nuevo soporte de teléfono
 
@@ -505,8 +504,12 @@ El procedimiento inicial consistió en un desmontaje selectivo, eliminando compo
 
 Una vez finalizada la fase de planificación, procedimos con la operación de montaje. Para adaptar e integrar el soporte al vehículo, se realizó una perforación de precisión en la base de la plataforma superior. Dicho orificio fue dimensionado específicamente para alojar el diámetro del vástago del trípode, asegurando un encaje firme. Posteriormente, se fijó sólidamente la estructura y se realizaron diversas pruebas de ajuste y resistencia para validar la solidez del montaje. Se llevaron a cabo ensayos de vibración y estabilidad para comprobar que el soporte permanecería estático durante el desplazamiento del vehículo, garantizando así una navegacion segura y un funcionamiento correcto del sistema de análisis de imagenes que implementa nuestra app.
 
-![Descripción de la imagen](other/imagen_soporte_telefono.jpg)
-![Descripción de la imagen](other/imagen_sensores.jpg)
+| Imagen | Descripción |
+| :----: | :---------- |
+| ![Modificación al tripode](other/desarmando-tripode.jfif) | Se modifico el tripode antes de ser instalado en la base del vehículo, de maneras que se descartaron las partes innecesarias para la adaptacion como lo son el mango de agarre y las patas de apoyo. |
+| ![Marca para la Perforación](other/marca-x.jfif) | Aquí se puede observar la marca en las medidas necesarias para la perforación de la base del vehículo, para así poder adaptar este tripode modificado. |
+| ![Perforación hecha](other/perforacion-hecha.jfif) | Se puede observar el resultado luego de que se hiciera la perforación que permitira la instalación del tripode. |
+| ![Finalizacion de la instalacion del tripode](other/fijacion-del-soporte.jfif) | Se busco una posición optima para posicionar el tripode, de manera que pudiera tener un mejor angulo de visión, lo que permitira mejorar la visibilidad de los obstaculos en pista. Luego se procedio a fijar dicho tripode a la base superior del vehículo con una combinación de quimicos que permitira una fijación optima. |
 
 ---
 
