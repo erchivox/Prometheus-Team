@@ -226,6 +226,12 @@ Diagrama de flujo, diseñado en Lucidchart, para una mejor visualización del fu
 
 ![Diagrama de Flujo de la Aplicación](other/Diagrama_de_flujo_app.png)
 
+----
+
+### Video del Funcionamiento en Vivo de la Aplicación
+
+[![Mira el video del funcionamiento en vivo de la aplicación](other/Funcionamiento-en-vivo.png)]()
+
 ---
 
 
