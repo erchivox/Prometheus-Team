@@ -67,9 +67,9 @@ Este proyecto ha sido el resultado del esfuerzo y la dedicación de todo nuestro
 
 ---
 ##  Fotos del vehiculo 
-| ![Arriba del vehiculo](v-photos/arriba.jpg)  |  ![Debajo de vehiculo](v-photos/abajo.jpg)  |  ![Lateral derecho](v-photos/lateral_derecho.jpg) |
+| ![Arriba del vehiculo](v-photos/arriba.JPG)  |  ![Debajo de vehiculo](v-photos/abajo.JPG)  |  ![Lateral derecho](v-photos/lateral-derecho.JPG) |
 | :----: | :------------------- | :---------- |
-| ![lateral izquierdo](v-photos/lateral_izquierdo.jpg)  |  ![frente](v-photos/frente.jpg)  |  ![detras](v-photos/detras.jpg) |
+| ![lateral izquierdo](v-photos/lateral-izquierdo.JPG)  |  ![frente](v-photos/frente.JPG)  |  ![detras](v-photos/detras.JPG) |
 
 ---
 
