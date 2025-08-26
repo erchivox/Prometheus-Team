@@ -230,7 +230,7 @@ Diagrama de flujo, diseñado en Lucidchart, para una mejor visualización del fu
 
 ### Video del Funcionamiento en Vivo de la Aplicación
 
-[![Mira el video del funcionamiento en vivo de la aplicación](other/Funcionamiento-en-vivo.png)]()
+[![Mira el video del funcionamiento en vivo de la aplicación](other/Funcionamiento-en-vivo.png)](https://youtu.be/TpLVCiggEwY)
 
 ---
 
