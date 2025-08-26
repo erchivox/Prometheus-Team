@@ -16,12 +16,12 @@ This directory must contain 6 photos of the vehicle (from every side, from top a
 ---
 
 ### Lateral Izquierdo
-![Carro - Lateral Izquierdo](lateral_izquierdo.JPG)
+![Carro - Lateral Izquierdo](lateral-izquierdo.JPG)
 
 ---
 
 ### Lateral Derecho
-![Carro - Lateral Derecho](lateral_derecho.JPG)
+![Carro - Lateral Derecho](lateral-derecho.JPG)
 
 ---
 
